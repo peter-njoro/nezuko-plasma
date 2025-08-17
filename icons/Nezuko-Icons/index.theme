@@ -1,0 +1,21 @@
+[Icon Theme]
+Name=Nezuko
+Comment=Nezuko Kamado inspired pink/green icon theme
+Inherits=breeze
+# Add every directory we provide
+Directories=scalable/apps,scalable/places,scalable/status
+
+[scalable/apps]
+Size=48
+Type=Scalable
+Context=Applications
+
+[scalable/places]
+Size=48
+Type=Scalable
+Context=Places
+
+[scalable/status]
+Size=48
+Type=Scalable
+Context=Status

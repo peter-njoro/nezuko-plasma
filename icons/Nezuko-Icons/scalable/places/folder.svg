@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tab -->
+  <path d="M32 64h80l20 24h92a20 20 0 0 1 20 20v16H16V84a20 20 0 0 1 20-20z" fill="#F5A9B8"/>
+  <!-- Body -->
+  <rect x="16" y="100" width="224" height="116" rx="16" fill="#FFC0CB"/>
+  <!-- Glass highlight -->
+  <rect x="24" y="108" width="208" height="40" rx="12" fill="#FFFFFF" opacity="0.18"/>
+  <!-- Border -->
+  <rect x="16" y="100" width="224" height="116" rx="16" fill="none" stroke="#FF69B4" stroke-width="6" opacity="0.8"/>
+</svg>
