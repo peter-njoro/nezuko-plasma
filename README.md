@@ -13,5 +13,5 @@ Features:
 git clone https://github.com/peter-njoro/nezuko-plasma.git
 mkdir -p ~/.local/share/plasma/desktoptheme/
 cp -r nezuko-plasma ~/.local/share/plasma/desktoptheme/Nezuko-Plasma
-
+```
 ## Then select it in System Settings → Plasma Style → Nezuko-Plasma.

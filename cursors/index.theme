@@ -1,0 +1,8 @@
+[Icon Theme]
+Name=Nezuko-Cursor
+Comment=Nezuko Kamado inspired cursor theme
+Inherits=Adwaita
+Directories=cursors
+
+[cursors]
+Size=24
