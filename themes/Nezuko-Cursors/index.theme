@@ -1,0 +1,9 @@
+[Icon Theme]
+Name=Nezuko-Cursors
+Comment=Nezuko Kamado inspired cursor theme
+Inherits=Adwaita
+
+[Cursor Theme]
+Name=Nezuko-Cursors
+Comment=Nezuko Kamado inspired pink cursors
+Directories=cursors
