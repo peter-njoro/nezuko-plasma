@@ -27,6 +27,12 @@ sudo apt update
 sudo apt install inkscape librsvg2-bin
 ```
 
+**Clone this repository:**
+```bash
+git clone https://github.com/peter-njoro/nezuko-plasma.git
+cd nezuko-plasma
+```
+
 1. Make the installer script executable:
 ```bash
 chmod +x install.sh
@@ -39,13 +45,9 @@ chmod +x install.sh
 ```
 ## The script will:
 - Copy cursors `→ ~/.local/share/icons/Nezuko-Cursors`
-
 - Copy icons `→ ~/.local/share/icons/Nezuko-Icons`
-
 - Copy plasma style `→ ~/.local/share/plasma/desktoptheme/Nezuko`
-
 - Copy global theme `→ ~/.local/share/plasma/look-and-feel/org.kde.nezuko`
-
 - Copy color scheme `→ ~/.local/share/color-schemes/Nezuko.colors`
 
 ## ✅ Once installed, apply the theme via:
@@ -71,13 +73,9 @@ chmod +x uninstall.sh
 ```
 This will delete:
 `~/.local/share/icons/Nezuko-Cursors`
-
 `~/.local/share/icons/Nezuko-Icons`
-
 `~/.local/share/plasma/desktoptheme/Nezuko`
-
 `~/.local/share/plasma/look-and-feel/org.kde.nezuko`
-
 `~/.local/share/color-schemes/Nezuko.colors`
 
 ## ⚠️ Troubleshooting
