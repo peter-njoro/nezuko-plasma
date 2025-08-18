@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=Nezuko
+Comment=Nezuko-inspired KDE Plasma theme with glassy dialogs, rounded corners, and shadows
+X-KDE-PluginInfo-Author=Peter Chege
+X-KDE-PluginInfo-Email=peterchegen12@gmail.com
+X-KDE-PluginInfo-Name=Nezuko
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
+X-KDE-PluginInfo-Category=Plasma Theme
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+
+[Settings]
+dialogs=true
+widgets=true
+opaqueDialogs=true
+translucentDialogs=true
+
