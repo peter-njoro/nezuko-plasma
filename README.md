@@ -12,7 +12,7 @@ Features:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/nezuko-plasma.git
+git clone https://github.com/peter-njoro/nezuko-plasma.git
 cd nezuko-plasma
 ```
 ### 2. Install Plasma Theme
