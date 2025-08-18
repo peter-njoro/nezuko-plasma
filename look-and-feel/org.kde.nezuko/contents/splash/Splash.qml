@@ -1,67 +1,55 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
-import QtMultimedia 5.15
-import QtQuick.Animations 2.15
+import QtQuick.Window 2.15
+import QtQuick.Shapes 1.15
+import QtGraphicalEffects 1.15
 
 Rectangle {
     id: root
     width: 640
     height: 480
-    color: "#000000" 
+    color: "#000000" // dark background
 
-    Image {
-        anchors.fill: parent
-        source: "look-and-feel/org.kde.nezuko/contents/splash/images/background.png"
-        fillMode: Image.PreserveAspectCrop
-        id: fallbackImage
-        visible: false
-    }
- 
-
-    // Video background
-    Video {
-        id: backgroundVideo
-        anchors.fill: parent
-        source: "look-and-feel/org.kde.nezuko/contents/splash/videos/background.mp4"  // change to your video path
-        autoPlay: true
-        loops: MediaPlayer.Infinite
-        fillMode: VideoOutput.PreserveAspectCrop
-    }
-
-    // Dark overlay for cinematic feel
+    // Liquid glass overlay
     Rectangle {
         anchors.fill: parent
-        color: "#00000077" // semi-transparent black
+        color: "#ffffff11" // semi-transparent white
+        radius: 20
+        layer.enabled: true
+        layer.effect: OpacityMask { maskSource: Rectangle { anchors.fill: parent; color: "white" } }
     }
 
-    // Main text with glow and fade-in
+    // Background image (safe for ksplash)
+    Image {
+        anchors.fill: parent
+        source: "images/background.png"
+        fillMode: Image.PreserveAspectCrop
+        opacity: 0.8
+    }
+
+    // Animated glow text
     Text {
         id: titleText
         anchors.centerIn: parent
         text: "Nezuko"
         font.pixelSize: 60
+        font.bold: true
         color: "white"
         opacity: 0.0
-        font.bold: true
 
-        // Glow effect
-        layer.enabled: true
-        layer.effect: OpacityMask {
-            maskSource: Rectangle { width: titleText.width; height: titleText.height; color: "white" }
-        }
-
+        // Fade-in animation
         SequentialAnimation on opacity {
             loops: 1
             NumberAnimation { from: 0.0; to: 0.9; duration: 1500; easing.type: Easing.InOutQuad }
         }
 
-        // Slight pulsating glow
+        // Pulsating glow (simulated)
         Behavior on color {
-            ColorAnimation { duration: 1000; from: "white"; to: "#ffcccc"; easing.type: Easing.InOutSine; loops: Animation.Infinite; reversible: true }
+            ColorAnimation { from: "white"; to: "#ffcccc"; duration: 1200; loops: Animation.Infinite; reversible: true; easing.type: Easing.InOutSine }
         }
     }
 
-    // Animated progress bar at bottom
+    // Animated progress bar
     Rectangle {
         id: progressBar
         width: parent.width * 0.6
@@ -79,14 +67,11 @@ Rectangle {
             color: "#ff9999"
             radius: 4
 
-            // Animate the progress bar
             Behavior on width {
                 NumberAnimation { duration: 2000; easing.type: Easing.InOutQuad }
             }
 
-            Component.onCompleted: {
-                width = progressBar.width * 0.7  // animated fill
-            }
+            Component.onCompleted: width = progressBar.width * 0.7
         }
     }
 }
