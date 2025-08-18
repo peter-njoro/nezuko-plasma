@@ -1,0 +1,16 @@
+[General]
+ColorScheme=Breeze
+Name=Nezuko
+
+[Icons]
+Theme=Nezuko-Icons
+
+[Cursors]
+Theme=Nezuko-Cursors
+
+[PlasmaTheme]
+Name=Nezuko-Plasma
+
+[WM]
+activeBackground=50,50,50
+inactiveBackground=30,30,30

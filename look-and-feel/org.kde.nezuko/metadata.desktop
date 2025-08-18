@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Nezuko Global Theme
+Comment=Complete KDE theme with translucent dialogs, custom cursors, and icons
+X-KDE-PluginInfo-Author=Peter Njoroge Chege
+X-KDE-PluginInfo-Email=peterchegen12@gmail.com
+X-KDE-PluginInfo-Name=org.kde.nezuko
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+
+[LookAndFeel]
+# References to your custom components
+CursorTheme=Nezuko-Cursors
+IconTheme=Nezuko-Icons
+PlasmaTheme=Nezuko-Plasma
