@@ -19,13 +19,26 @@ Includes:
 ## 📦 Installation
 
 **Before you begin:**  
-Make sure you have `inkscape` and `rsvg-convert` installed, as they are required for icon conversion.
+Make sure you have `inkscape` and `rsvg-convert` installed, as they are required for icon conversion.  
+You also need the Qt development packages for building the standalone animated splash:
 
-Install them on Debian/Ubuntu with:
+- `qt5-qmake` – provides `qmake`  
+- `qtbase5-dev` – core Qt libraries and headers  
+- `qtdeclarative5-dev` – for QML/C++ integration  
+- `qml-module-qtquick2` – basic Qt Quick module  
+- `qml-module-qtquick-controls2` – Qt Quick Controls 2  
+- `qml-module-qtmultimedia` – multimedia support in QML  
+- `qtmultimedia5-dev` – C++ multimedia development files  
+
+Install everything on Debian/Ubuntu with:
+
 ```bash
 sudo apt update
-sudo apt install inkscape librsvg2-bin
-```
+sudo apt install inkscape librsvg2-bin \
+qt5-qmake qtbase5-dev qtdeclarative5-dev \
+qml-module-qtquick2 qml-module-qtquick-controls2 \
+qml-module-qtmultimedia qtmultimedia5-dev build-essential
+
 
 **Clone this repository:**
 ```bash
