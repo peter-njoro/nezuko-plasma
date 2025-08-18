@@ -45,8 +45,11 @@ BackgroundNormal=#2E2A2E
 ForegroundNormal=#F5A9B8
 
 [Colors:Header]
-BackgroundNormal=#2E2A2E
-ForegroundNormal=#F5A9B8
+BackgroundNormal=#F5A9B8
+ForegroundNormal=#2E2A2E
+BackgroundAlternate=#FFC0CB
+ForegroundInactive=#FFC0CB
+ForegroundActive=#2E2A2E
 
 [Colors:Highlight]
 BackgroundNormal=#FF69B4
