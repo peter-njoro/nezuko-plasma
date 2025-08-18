@@ -1,4 +1,5 @@
 icons/Nezuko-Icons/png-fallbacks
 *.png
 !look-and-feel/org.kde.nezuko/contents/splash/images/background.png
-!look-and-feel/org.kde.nezuko/contents/previews/Screenshot.png
+!screenshot.png
+!look-and-feel/org.kde.nezuko/contents/previews/preview.png

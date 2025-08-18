@@ -12,7 +12,7 @@ Includes:
 
 ## 🖼️ Preview
 
-![Nezuko Plasma Theme Screenshot](screenshot.png)
+![Nezuko Plasma Theme Screenshot](look-and-feel/org.kde.nezuko/contents/previews/preview.png)
 
 ---
 
