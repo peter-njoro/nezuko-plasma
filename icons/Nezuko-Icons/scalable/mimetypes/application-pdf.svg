@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff2f8"/>
+      <stop offset="1" stop-color="#ffe3ef"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#s)">
+    <path d="M32 20h48l16 16v72a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V28a8 8 0 0 1 8-8z" fill="url(#paper)" stroke="#ff6aa3" stroke-width="3"/>
+    <path d="M80 20v16h16" fill="#ffd1e6"/>
+    <rect x="36" y="60" width="56" height="6" rx="3" fill="#ff9ec4"/>
+    <rect x="36" y="72" width="56" height="6" rx="3" fill="#ffb6d2"/>
+    <rect x="36" y="84" width="40" height="6" rx="3" fill="#ffd1e6"/>
+    <rect x="44" y="34" width="40" height="18" rx="4" fill="#ff4f99"/>
+    <text x="64" y="47" text-anchor="middle" font-size="12" font-family="DejaVu Sans, Sans" fill="#fff">PDF</text>
+  </g>
+</svg>

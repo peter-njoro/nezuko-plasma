@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Base folder (lighter) -->
-  <path d="M32 96h192a16 16 0 0 1 16 16v92a16 16 0 0 1-16 16H32a16 16 0 0 1-16-16v-92a16 16 0 0 1 16-16z" fill="#FFC0CB"/>
-  <!-- House -->
-  <path d="M128 108l64 48h-24v44h-80v-44H64l64-48z" fill="#2E2A2E" opacity="0.85"/>
-  <!-- Border -->
-  <rect x="16" y="96" width="224" height="124" rx="16" fill="none" stroke="#FF69B4" stroke-width="6" opacity="0.8"/>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffdbe9"/>
+      <stop offset="1" stop-color="#ffc0d9"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#s)">
+    <rect x="14" y="20" width="100" height="94" rx="22" fill="url(#bg)" stroke="#ff6aa3" stroke-width="3"/>
+    <path d="M34 74l30-24 30 24v26a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V74z" fill="#ffe6f1" stroke="#ff6aa3" stroke-width="3"/>
+    <rect x="56" y="84" width="16" height="20" rx="3" fill="#ff9ec4"/>
+    <path d="M28 72l36-29 36 29" fill="none" stroke="#ff6aa3" stroke-width="4" stroke-linecap="round"/>
+  </g>
 </svg>
+

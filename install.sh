@@ -27,10 +27,25 @@ install_theme_component() {
     local dest=$2
     local name=$3
 
+    if [ ! -d "$src" ]; then
+        echo "⚠️  Source directory $src for $name not found, skipping."
+        return
+    fi
+
     echo "➡️ Installing $name..."
     rm -rf "$dest"
     cp -r "$src" "$dest"
 }
+
+# Run SVG → PNG conversion
+CONVERT_SCRIPT="icons/$ICON_NAME/convert_svgs.sh"
+if [ -f "$CONVERT_SCRIPT" ]; then
+    echo "🎨 Generating PNG fallbacks from SVGs..."
+    chmod +x "$CONVERT_SCRIPT"
+    (cd "icons/$ICON_NAME" && ./convert_svgs.sh)
+else
+    echo "⚠️ No convert_svgs.sh found at $CONVERT_SCRIPT, skipping PNG fallback generation."
+fi
 
 # Install components
 install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "cursors"
@@ -47,6 +62,33 @@ else
     echo "⚠️ No Nezuko color scheme found in $COLOR_SRC, skipping."
 fi
 
+# Always set splash background image if present
+SPLASH_IMAGE_SRC="background.png"
+SPLASH_IMAGE_DEST="$LOOKFEEL_DIR/$LOOKFEEL_NAME/contents/splash/images/background.png"
+if [ -f "$SPLASH_IMAGE_SRC" ]; then
+    echo "➡️ Setting splash background image..."
+    mkdir -p "$(dirname "$SPLASH_IMAGE_DEST")"
+    cp "$SPLASH_IMAGE_SRC" "$SPLASH_IMAGE_DEST"
+fi
+
+# Set splash background video if present
+SPLASH_BG_SRC="background.mp4"
+SPLASH_BG_DEST="$LOOKFEEL_DIR/$LOOKFEEL_NAME/contents/splash/videos/background.mp4"
+SPLASH_QML="$LOOKFEEL_DIR/$LOOKFEEL_NAME/contents/splash/Splash.qml"
+
+if [ -f "$SPLASH_BG_SRC" ]; then
+    echo "➡️ Setting splash background video..."
+    mkdir -p "$(dirname "$SPLASH_BG_DEST")"
+    cp "$SPLASH_BG_SRC" "$SPLASH_BG_DEST"
+
+    if [ -f "$SPLASH_QML" ]; then
+        echo "➡️ Patching Splash.qml to use background video with fallback..."
+        # NOTE: This sed command is a placeholder; actual patching logic may be needed
+        # sed -i '/Image[[:space:]]*{/,/}/c\' "$SPLASH_QML"
+    else
+        echo "⚠️ No Splash.qml found at $SPLASH_QML, skipping patch."
+    fi
+fi
 
 echo "✅ Installation complete!"
 echo

@@ -10,7 +10,22 @@ Includes:
 
 ---
 
+## 🖼️ Preview
+
+![Nezuko Plasma Theme Screenshot](look-and-feel/org.kde.nezuko/contents/previews/Screenshot.png)
+
+---
+
 ## 📦 Installation
+
+**Before you begin:**  
+Make sure you have `inkscape` and `rsvg-convert` installed, as they are required for icon conversion.
+
+Install them on Debian/Ubuntu with:
+```bash
+sudo apt update
+sudo apt install inkscape librsvg2-bin
+```
 
 1. Make the installer script executable:
 ```bash

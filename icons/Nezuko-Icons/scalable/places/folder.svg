@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Tab -->
-  <path d="M32 64h80l20 24h92a20 20 0 0 1 20 20v16H16V84a20 20 0 0 1 20-20z" fill="#F5A9B8"/>
-  <!-- Body -->
-  <rect x="16" y="100" width="224" height="116" rx="16" fill="#FFC0CB"/>
-  <!-- Glass highlight -->
-  <rect x="24" y="108" width="208" height="40" rx="12" fill="#FFFFFF" opacity="0.18"/>
-  <!-- Border -->
-  <rect x="16" y="100" width="224" height="116" rx="16" fill="none" stroke="#FF69B4" stroke-width="6" opacity="0.8"/>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd6e6"/>
+      <stop offset="1" stop-color="#ffb6d2"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M16 36c0-6 4.8-10 10.7-10h23.8c4.2 0 6.3 2 8.7 4.6l3.6 3.8c1.7 1.8 2.8 2.6 5.6 2.6h33c6 0 10.7 4.9 10.7 10.9v44.6c0 6-4.7 11-10.7 11H26.7C20.8 103.5 16 98.6 16 92.6V36z" fill="url(#g)" stroke="#ff6aa3" stroke-width="3" />
+    <path d="M16 48h96v11H16z" fill="#ff8fbd" opacity="0.6"/>
+  </g>
 </svg>
+

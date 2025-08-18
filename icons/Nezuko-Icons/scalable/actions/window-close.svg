@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.2"/></filter>
+    <radialGradient id="r" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#ff7fb3"/>
+      <stop offset="1" stop-color="#ff4f99"/>
+    </radialGradient>
+  </defs>
+  <g filter="url(#s)">
+    <circle cx="64" cy="64" r="48" fill="url(#r)" stroke="#ff2f8d" stroke-width="3"/>
+    <path d="M46 46l36 36M82 46L46 82" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

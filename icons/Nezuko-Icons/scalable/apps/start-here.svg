@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-  <!-- Pink glass pill -->
-  <rect x="16" y="32" width="224" height="192" rx="48" ry="48" fill="#F5A9B8" fill-opacity="0.85"/>
-  <!-- Inner highlight -->
-  <rect x="24" y="42" width="208" height="80" rx="36" ry="36" fill="#FFFFFF" fill-opacity="0.18"/>
-  <!-- Nezuko bamboo motif -->
-  <rect x="116" y="80" width="24" height="96" rx="6" fill="#4CAF50"/>
-  <rect x="116" y="116" width="24" height="8" fill="#2E2A2E" opacity="0.35"/>
-  <rect x="116" y="144" width="24" height="8" fill="#2E2A2E" opacity="0.35"/>
-  <!-- Border glow -->
-  <rect x="16" y="32" width="224" height="192" rx="48" ry="48" fill="none" stroke="#FF69B4" stroke-width="6" opacity="0.8"/>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/></filter>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd6e8"/>
+      <stop offset="1" stop-color="#ffadcf"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#s)">
+    <circle cx="64" cy="64" r="50" fill="url(#bg)" stroke="#ff6aa3" stroke-width="3"/>
+    <path d="M64 34l10.8 21.8 24.2 3.5-17.5 17 4.1 24-21.6-11.4L42.4 100l4.1-24L29 59.3l24.2-3.5z"
+          fill="#fff" stroke="#ff6aa3" stroke-width="3"/>
+  </g>
 </svg>
+
