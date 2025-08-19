@@ -3,6 +3,16 @@ Name=Nezuko Kamado
 Comment=Anime inspired theme based on Nezuko Kamado (pink kimono + dark haori + bamboo green)
 ColorScheme=Nezuko Kamado
 
+[WM]
+activeBackground=#FF69B4
+activeForeground=#FFFFFF
+inactiveBackground=#3A343A
+inactiveForeground=#FFC0CB
+activeBlend=#FF69B4
+inactiveBlend=#3A343A
+PmenuBackground=#2E2A2E
+PmenuForeground=#FFC0CB
+
 [Colors:View]
 BackgroundNormal=#2E2A2E
 BackgroundAlternate=#3A343A
@@ -13,10 +23,15 @@ ForegroundVisited=#81C784
 ForegroundNegative=#FF4081
 ForegroundNeutral=#FFD180
 ForegroundPositive=#A5D6A7
+DecorationFocus=#FF69B4
+DecorationHover=#F5A9B8
 
 [Colors:Window]
 BackgroundNormal=#2E2A2E
 ForegroundNormal=#FFFFFF
+BackgroundAlternate=#3A343A
+DecorationFocus=#FF69B4
+DecorationHover=#F5A9B8
 
 [Colors:Button]
 BackgroundNormal=#F5A9B8
@@ -28,21 +43,27 @@ ForegroundVisited=#81C784
 ForegroundNegative=#FF4081
 ForegroundNeutral=#FFD180
 ForegroundPositive=#A5D6A7
+DecorationFocus=#FF69B4
+DecorationHover=#FF4081
 
 [Colors:Selection]
 BackgroundNormal=#FF69B4
-ForegroundNormal=#FFFFFF
 BackgroundAlternate=#F5A9B8
+ForegroundNormal=#FFFFFF
 ForegroundInactive=#FFC0CB
 ForegroundLink=#4CAF50
+DecorationFocus=#FF69B4
 
 [Colors:Tooltip]
 BackgroundNormal=#3A343A
 ForegroundNormal=#FFFFFF
+BackgroundAlternate=#2E2A2E
+DecorationHover=#F5A9B8
 
 [Colors:Complementary]
 BackgroundNormal=#2E2A2E
 ForegroundNormal=#F5A9B8
+DecorationFocus=#FF69B4
 
 [Colors:Header]
 BackgroundNormal=#F5A9B8
@@ -50,11 +71,46 @@ ForegroundNormal=#2E2A2E
 BackgroundAlternate=#FFC0CB
 ForegroundInactive=#FFC0CB
 ForegroundActive=#2E2A2E
+DecorationFocus=#FF69B4
 
 [Colors:Highlight]
 BackgroundNormal=#FF69B4
 ForegroundNormal=#FFFFFF
+BackgroundAlternate=#F5A9B8
+DecorationHover=#FF4081
 
 [Colors:Inactive]
 BackgroundNormal=#3A343A
 ForegroundNormal=#FFC0CB
+DecorationFocus=#FF69B4
+
+[Colors:Active]
+BackgroundNormal=#FF69B4
+ForegroundNormal=#FFFFFF
+DecorationHover=#F5A9B8
+
+[Colors:Toolbar]
+BackgroundNormal=#3A343A
+ForegroundNormal=#FFC0CB
+DecorationFocus=#FF69B4
+
+[Colors:Menu]
+BackgroundNormal=#2E2A2E
+ForegroundNormal=#FFC0CB
+BackgroundAlternate=#3A343A
+DecorationHover=#F5A9B8
+
+[Colors:Text]
+BackgroundNormal=#2E2A2E
+ForegroundNormal=#FFFFFF
+BackgroundAlternate=#3A343A
+ForegroundLink=#4CAF50
+ForegroundVisited=#81C784
+ForegroundActive=#FF69B4
+DecorationFocus=#FF69B4
+
+[Colors:Base]
+BackgroundNormal=#2E2A2E
+ForegroundNormal=#FFFFFF
+BackgroundAlternate=#3A343A
+DecorationHover=#F5A9B8

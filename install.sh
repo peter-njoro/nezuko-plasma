@@ -12,13 +12,15 @@ CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
 LOOKFEEL_DIR="$HOME/.local/share/plasma/look-and-feel"
 COLOR_DIR="$HOME/.local/share/color-schemes"
+KONSOLE_DIR="$HOME/.local/share/konsole"
 LOCAL_BIN="$HOME/.local/bin"
 
 CURSOR_NAME="Nezuko-Cursors"
-ICON_NAME="Nezuko-Icons"  # This is the name users will select in settings
+ICON_NAME="Nezuko-Icons" 
 PLASMA_NAME="Nezuko"
 LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
+KONSOLE_NAME="NezukoKamado.colorscheme"
 
 ICON_PACK_DIR="icons/$ICON_NAME/scalable"
 BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"
@@ -118,6 +120,7 @@ install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "curso
 install_theme_component "icons/$ICON_NAME" "$ICON_DIR/$ICON_NAME" "icons"
 install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 install_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
+install_theme_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # -------------------------
 # Color scheme
@@ -131,6 +134,14 @@ else
     echo "⚠️ No Nezuko color scheme found in $COLOR_SRC, skipping."
 fi
 
+KONSOLE_SRC="konsole/$KONSOLE_NAME"
+if [ -f "$KONSOLE_SRC" ]; then
+    echo "➡️ Installing Konsole color scheme..."
+    cp "$KONSOLE_SRC" "$KONSOLE_DIR/$KONSOLE_NAME"
+    sudo chown "$(whoami)":"$(whoami)" "$KONSOLE_DIR/$KONSOLE_NAME"
+else
+    echo "⚠️ No Nezuko Konsole color scheme found in $KONSOLE_SRC, skipping."
+fi
 # -------------------------
 # Splash resources
 # -------------------------
@@ -208,6 +219,14 @@ X-GNOME-Autostart-enabled=true
 Name=Nezuko Splash
 Comment=Cinematic animated KDE splash
 EOL
+
+# -------------------------
+# Set Konsole color scheme as default for all profiles
+# -------------------------
+if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
+    echo "➡️ Setting NezukoKamado as the default Konsole color scheme for all profiles..."
+    sed -i 's/^ColorScheme=.*/ColorScheme=NezukoKamado/' "$KONSOLE_DIR"/*.profile
+fi
 
 # -------------------------
 # Completion message
