@@ -164,6 +164,13 @@ if [ -f "$SPLASH_VIDEO_SRC" ]; then
     sudo chown "$(whoami)":"$(whoami)" "$SPLASH_VIDEO_DEST"
 fi
 
+
+plasma_wallpaper_config="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+if [ -f "$SPLASH_IMAGE_SRC" ] && [ -f "$plasma_wallpaper_config" ]; then
+    echo "➡️ Setting background.png as Plasma wallpaper (current user)..."
+    sed -i "s|^Image=.*|Image=file://$PWD/$SPLASH_IMAGE_SRC|" "$plasma_wallpaper_config"
+fi
+
 # -------------------------
 # Build standalone splash
 # -------------------------
@@ -226,6 +233,26 @@ EOL
 if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
     echo "➡️ Setting NezukoKamado as the default Konsole color scheme for all profiles..."
     sed -i 's/^ColorScheme=.*/ColorScheme=NezukoKamado/' "$KONSOLE_DIR"/*.profile
+fi
+
+# -------------------------
+# Set lockscreen wallpaper (Plasma, may not work on all versions)
+# -------------------------
+KSCREENLOCKER_CONF="$HOME/.config/kscreenlockerrc"
+if [ -f "$SPLASH_IMAGE_SRC" ]; then
+    echo "➡️ Attempting to set lockscreen wallpaper to background.png..."
+    # Add or update the Wallpaper entry under [Greeter]
+    if grep -q "^\[Greeter\]" "$KSCREENLOCKER_CONF" 2>/dev/null; then
+        # Section exists, update or add Wallpaper line
+        if grep -q "^Wallpaper=" "$KSCREENLOCKER_CONF"; then
+            sed -i "s|^Wallpaper=.*|Wallpaper=file://$PWD/$SPLASH_IMAGE_SRC|" "$KSCREENLOCKER_CONF"
+        else
+            sed -i "/^\[Greeter\]/a Wallpaper=file://$PWD/$SPLASH_IMAGE_SRC" "$KSCREENLOCKER_CONF"
+        fi
+    else
+        # Section doesn't exist, append it
+        echo -e "[Greeter]\nWallpaper=file://$PWD/$SPLASH_IMAGE_SRC" >> "$KSCREENLOCKER_CONF"
+    fi
 fi
 
 # -------------------------
