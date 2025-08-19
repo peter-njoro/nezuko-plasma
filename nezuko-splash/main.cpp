@@ -1,30 +1,27 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QCoreApplication>
-#include <QDir>
+#include <QStandardPaths>
+#include <QQmlContext>
+#include <QProcessEnvironment>
 
 int main(int argc, char *argv[])
 {
+    // Enable Qt Multimedia logging
+    qputenv("QT_LOGGING_RULES", "qt.multimedia*=true");
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
 
-    // Determine path to main.qml relative to the executable
-    QString qmlPath = QCoreApplication::applicationDirPath() + "/main.qml";
-    QUrl url = QUrl::fromLocalFile(qmlPath);
+    // Set context property for resource paths
+    engine.rootContext()->setContextProperty("appDir", QCoreApplication::applicationDirPath());
 
-    // Fallback: check if main.qml exists, otherwise try resource
-    if (!QFile::exists(qmlPath)) {
-        url = QUrl(QStringLiteral("qrc:/main.qml"));
-    }
+    // Always load from QRC resources
+    engine.load(QUrl("qrc:/main.qml"));
 
-    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-                     &app, [url](QObject *obj, const QUrl &objUrl) {
-                         if (!obj && url == objUrl)
-                             QCoreApplication::exit(-1);
-                     }, Qt::QueuedConnection);
-
-    engine.load(url);
+    if (engine.rootObjects().isEmpty())
+        return -1;
 
     return app.exec();
 }

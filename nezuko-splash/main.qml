@@ -4,23 +4,41 @@ import QtQuick.Controls 2.15
 import QtQuick.Animations 2.15
 import QtMultimedia 5.15
 
-Window {
-    id: root
-    width: 640
-    height: 480
-    visible: true
-    flags: Qt.FramelessWindowHint
-    color: "#000000"
 
-    // Optional video background
-    Video {
-        id: bgVideo
-        anchors.fill: parent
-        source: "videos/background.mp4"  // comment out if not using video
-        autoPlay: true
-        loops: MediaPlayer.Infinite
-        fillMode: VideoOutput.PreserveAspectCrop
+
+Window {
+        id: root
+        width: 640
+        height: 480
         visible: true
+        flags: Qt.FramelessWindowHint
+        color: "#000000"
+
+        property string resourcePath: Qt.resolvedUrl(appDir + "/../share/plasma/look-and-feel/org.kde.nezuko/contents/splash")
+
+        // Video background with fallback
+    Loader {
+        id: backgroundLoader
+        anchors.fill: parent
+        sourceComponent: Video {
+            id: bgVideo
+            source: resourcePath + "/videos/background.mp4"
+            autoPlay: true
+            loops: MediaPlayer.Infinite
+            fillMode: VideoOutput.PreserveAspectCrop
+            onErrorChanged: {
+                if (error !== MediaPlayer.NoError) {
+                    backgroundLoader.sourceComponent = imageComponent
+                }
+            }
+        }
+    }
+    Component {
+        id: imageComponent
+        Image {
+            source: resourcePath + "/images/background.png"
+            fillMode: Image.PreserveAspectCrop
+        }
     }
 
     // Fallback static image
@@ -100,3 +118,4 @@ Window {
         onTriggered: root.close()
     }
 }
+

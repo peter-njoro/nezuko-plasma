@@ -15,14 +15,15 @@ COLOR_DIR="$HOME/.local/share/color-schemes"
 LOCAL_BIN="$HOME/.local/bin"
 
 CURSOR_NAME="Nezuko-Cursors"
-ICON_NAME="Nezuko-Icons"
+ICON_NAME="Nezuko-Icons"  # This is the name users will select in settings
 PLASMA_NAME="Nezuko"
 LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
 
 ICON_PACK_DIR="icons/$ICON_NAME/scalable"
-BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"  # Default Breeze icon location
+BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"
 
+# Create all necessary directories
 mkdir -p "$ICON_DIR" "$CURSOR_DIR" "$PLASMA_DIR" "$LOOKFEEL_DIR" "$COLOR_DIR" "$LOCAL_BIN" "$ICON_PACK_DIR"
 
 # -------------------------
@@ -48,7 +49,6 @@ recolor_svg() {
     local svg=$1
     local dest=$2
 
-    # Use Inkscape if available
     if command -v inkscape >/dev/null 2>&1; then
         inkscape "$svg" --export-filename="$dest" --actions="select-all;object-set-fill:#ff66aa;export-do"
     elif command -v xmlstarlet >/dev/null 2>&1; then
@@ -61,39 +61,42 @@ recolor_svg() {
 }
 
 # -------------------------
-# Recolor Breeze icons and add to Nezuko pack
+# Recolor Breeze icons into Nezuko pack
 # -------------------------
 if [ -d "$BREEZE_ICON_SRC" ]; then
-    echo "🎨 Copying and recoloring Breeze icons to pink..."
+    echo "🎨 Copying and recoloring Breeze icons to pink (as $ICON_NAME)..."
     mkdir -p "$ICON_PACK_DIR"
     
-    # Copy and recolor Breeze SVGs
+    # Process each SVG
     find "$BREEZE_ICON_SRC" -name "*.svg" | while read -r breeze_svg; do
         filename=$(basename "$breeze_svg")
         dest_svg="$ICON_PACK_DIR/$filename"
         
-        # Skip if already exists (Nezuko pack takes priority)
+        # Only process if not already in Nezuko pack
         if [ ! -f "$dest_svg" ]; then
             recolor_svg "$breeze_svg" "$dest_svg"
+            # Ensure the icon gets Nezuko's color scheme
+            sed -i 's/fill:#[0-9a-fA-F]*/fill:#ff66aa/g' "$dest_svg"
         fi
     done
-    echo "✅ Breeze icons recolored and merged into Nezuko pack"
+    echo "✅ Breeze icons recolored and added to $ICON_NAME pack"
 else
     echo "⚠️  Breeze icons not found at $BREEZE_ICON_SRC, skipping."
 fi
 
 # -------------------------
-# Recolor existing Nezuko icons (if any)
+# Recolor existing Nezuko icons
 # -------------------------
 if [ -d "$ICON_PACK_DIR" ]; then
-    echo "🎨 Recoloring existing Nezuko icons to pink..."
+    echo "🎨 Ensuring all $ICON_NAME icons are pink..."
     for svg in "$ICON_PACK_DIR"/*.svg; do
         [ -e "$svg" ] || continue
-        recolor_svg "$svg" "$svg"
+        # Force recolor to ensure consistency
+        sed -i 's/fill:#[0-9a-fA-F]*/fill:#ff66aa/g' "$svg"
     done
-    echo "✅ Nezuko icons recolored to pink"
+    echo "✅ $ICON_NAME icons verified to be pink"
 else
-    echo "⚠️  Nezuko icon directory $ICON_PACK_DIR not found, skipping recolor."
+    echo "⚠️  $ICON_NAME icon directory $ICON_PACK_DIR not found, skipping recolor."
 fi
 
 # -------------------------
@@ -116,7 +119,9 @@ install_theme_component "icons/$ICON_NAME" "$ICON_DIR/$ICON_NAME" "icons"
 install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 install_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
 
+# -------------------------
 # Color scheme
+# -------------------------
 COLOR_SRC="plasma/$PLASMA_NAME/colors/$COLOR_NAME"
 if [ -f "$COLOR_SRC" ]; then
     echo "➡️ Installing color scheme..."
@@ -154,9 +159,10 @@ fi
 SPLASH_SRC_DIR="nezuko-splash"
 SPLASH_BUILD_DIR="$SPLASH_SRC_DIR/build"
 SPLASH_EXEC="$LOCAL_BIN/nezuko-splash"
+SPLASH_EXEC_DIR="$LOCAL_BIN/nezuko-splash-resources"
 
 if [ -d "$SPLASH_SRC_DIR" ]; then
-    echo "➡️ Building standalone animated splash app..."
+    echo "➡️ Building standalone animated splash app (this may take a while, please be patient 🥺🥺)..."
     mkdir -p "$SPLASH_BUILD_DIR"
     cd "$SPLASH_BUILD_DIR"
     
@@ -164,10 +170,18 @@ if [ -d "$SPLASH_SRC_DIR" ]; then
     make -j$(nproc)
     
     if [ -f "nezuko-splash" ]; then
+        # Copy the executable
         cp nezuko-splash "$SPLASH_EXEC"
         chmod +x "$SPLASH_EXEC"
         sudo chown "$(whoami)":"$(whoami)" "$SPLASH_EXEC"
+
+        # Copy splash resources
+        mkdir -p "$SPLASH_EXEC_DIR"
+        cp -r "$LOOKFEEL_DIR/$LOOKFEEL_NAME/contents/splash" "$SPLASH_EXEC_DIR"
+        sudo chown -R "$(whoami)":"$(whoami)" "$SPLASH_EXEC_DIR"
+
         echo "✅ Standalone splash installed at $SPLASH_EXEC"
+        echo "✅ Splash resources copied to $SPLASH_EXEC_DIR"
     else
         echo "⚠️ Failed to build standalone splash executable."
     fi
