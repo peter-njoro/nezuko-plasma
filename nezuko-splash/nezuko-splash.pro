@@ -4,7 +4,8 @@ CONFIG += c++11
 
 SOURCES += main.cpp
 
-RESOURCES +=
+# Include main.qml as a resource
+RESOURCES += resources.qrc
 
 # QML import path
 QML_IMPORT_PATH = .

@@ -1,7 +1,7 @@
 [Icon Theme]
 Name=Nezuko
 Comment=Nezuko custom KDE icon theme
-Inherits=breeze,hicolor
+Inherits=breeze
 
 # Primary scalable directories (SVGs)
 Directories=scalable/apps,scalable/actions,scalable/devices,scalable/mimetypes,scalable/places,\

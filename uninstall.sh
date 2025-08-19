@@ -18,18 +18,16 @@ PLASMA_NAME="Nezuko"
 LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
 
-# Function: ensure correct ownership (fixes leftover root-owned files)
+# Function: fix ownership safely
 fix_ownership() {
     local path=$1
     if [ -e "$path" ]; then
-        if [ "$(stat -c %U "$path")" != "$USER" ]; then
-            echo "⚠️  Fixing ownership for $path"
-            sudo chown -R "$USER":"$USER" "$path"
-        fi
+        echo "⚠️  Fixing ownership for $path"
+        sudo chown -R "$(whoami)":"$(whoami)" "$path"
     fi
 }
 
-# Function to uninstall safely
+# Function: remove safely
 remove_theme_component() {
     local dest=$1
     local name=$2
@@ -37,7 +35,7 @@ remove_theme_component() {
     if [ -e "$dest" ]; then
         echo "➡️ Removing $name..."
         fix_ownership "$dest"
-        rm -rf "$dest"
+        sudo rm -rf "$dest"
     else
         echo "ℹ️  $name not found, skipping."
     fi
@@ -50,5 +48,18 @@ remove_theme_component "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 remove_theme_component "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
 remove_theme_component "$COLOR_DIR/$COLOR_NAME" "color scheme"
 
+# Remove standalone splash if installed
+SPLASH_BIN="$HOME/.local/bin/nezuko-splash"
+if [ -f "$SPLASH_BIN" ]; then
+    echo "➡️ Removing standalone splash..."
+    sudo rm -f "$SPLASH_BIN"
+fi
+
+# Remove autostart entry
+AUTOSTART_FILE="$HOME/.config/autostart/nezuko-splash.desktop"
+if [ -f "$AUTOSTART_FILE" ]; then
+    echo "➡️ Removing autostart entry..."
+    rm -f "$AUTOSTART_FILE"
+fi
 
 echo "✅ Uninstallation complete!"

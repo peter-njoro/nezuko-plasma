@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QQmlContext>
+#include <QCoreApplication>
+#include <QDir>
 
 int main(int argc, char *argv[])
 {
@@ -8,8 +9,15 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    // Load QML from the resources or relative path
-    const QUrl url(QStringLiteral("main.qml"));
+    // Determine path to main.qml relative to the executable
+    QString qmlPath = QCoreApplication::applicationDirPath() + "/main.qml";
+    QUrl url = QUrl::fromLocalFile(qmlPath);
+
+    // Fallback: check if main.qml exists, otherwise try resource
+    if (!QFile::exists(qmlPath)) {
+        url = QUrl(QStringLiteral("qrc:/main.qml"));
+    }
+
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {
                          if (!obj && url == objUrl)
