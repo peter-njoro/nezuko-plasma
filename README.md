@@ -102,7 +102,7 @@ inside the theme folder before reinstalling.
 
 - If the theme doesn’t show up in System Settings, try logging out/in or restarting Plasma with:
 ```bash
-kquitapp6 plasmashell && kstart6 plasmashell
+kquitapp plasmashell && plasmashell &
 ```
 ## 🪄 Credits
 
