@@ -10,13 +10,13 @@ echo "🔮 Installing Nezuko KDE theme..."
 ICON_DIR="$HOME/.local/share/icons"
 CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
-LOOKFEEL_DIR="$HOME/.local/share/plasma/look-and-feel"
+LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"  # Changed to system-wide
 COLOR_DIR="$HOME/.local/share/color-schemes"
 KONSOLE_DIR="$HOME/.local/share/konsole"
 LOCAL_BIN="$HOME/.local/bin"
 
 CURSOR_NAME="Nezuko-Cursors"
-ICON_NAME="Nezuko-Icons" 
+ICON_NAME="Nezuko-Icons"
 PLASMA_NAME="Nezuko"
 LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
@@ -26,7 +26,7 @@ ICON_PACK_DIR="icons/$ICON_NAME/scalable"
 BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"
 
 # Create all necessary directories
-mkdir -p "$ICON_DIR" "$CURSOR_DIR" "$PLASMA_DIR" "$LOOKFEEL_DIR" "$COLOR_DIR" "$LOCAL_BIN" "$ICON_PACK_DIR"
+mkdir -p "$ICON_DIR" "$CURSOR_DIR" "$PLASMA_DIR" "$COLOR_DIR" "$LOCAL_BIN" "$ICON_PACK_DIR"
 
 # -------------------------
 # Helper functions
@@ -45,6 +45,22 @@ install_theme_component() {
     rm -rf "$dest"
     cp -r "$src" "$dest"
     sudo chown -R "$(whoami)":"$(whoami)" "$dest"
+}
+
+install_system_theme_component() {
+    local src=$1
+    local dest=$2
+    local name=$3
+
+    if [ ! -d "$src" ]; then
+        echo "⚠️  Source directory $src for $name not found, skipping."
+        return
+    fi
+
+    echo "➡️ Installing $name (system-wide)..."
+    sudo rm -rf "$dest"
+    sudo cp -r "$src" "$dest"
+    sudo chown -R root:root "$dest"
 }
 
 recolor_svg() {
@@ -68,12 +84,12 @@ recolor_svg() {
 if [ -d "$BREEZE_ICON_SRC" ]; then
     echo "🎨 Copying and recoloring Breeze icons to pink (as $ICON_NAME)..."
     mkdir -p "$ICON_PACK_DIR"
-    
+
     # Process each SVG
     find "$BREEZE_ICON_SRC" -name "*.svg" | while read -r breeze_svg; do
         filename=$(basename "$breeze_svg")
         dest_svg="$ICON_PACK_DIR/$filename"
-        
+
         # Only process if not already in Nezuko pack
         if [ ! -f "$dest_svg" ]; then
             recolor_svg "$breeze_svg" "$dest_svg"
@@ -119,7 +135,7 @@ fi
 install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "cursors"
 install_theme_component "icons/$ICON_NAME" "$ICON_DIR/$ICON_NAME" "icons"
 install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
-install_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
+install_system_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"  # Changed to system-wide
 install_theme_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # -------------------------
@@ -142,6 +158,7 @@ if [ -f "$KONSOLE_SRC" ]; then
 else
     echo "⚠️ No Nezuko Konsole color scheme found in $KONSOLE_SRC, skipping."
 fi
+
 # -------------------------
 # Splash resources
 # -------------------------
@@ -151,19 +168,18 @@ SPLASH_VIDEO_SRC="background.mp4"
 SPLASH_VIDEO_DEST="$LOOKFEEL_DIR/$LOOKFEEL_NAME/contents/splash/videos/background.mp4"
 
 if [ -f "$SPLASH_IMAGE_SRC" ]; then
-    echo "➡️ Copying splash image..."
-    mkdir -p "$(dirname "$SPLASH_IMAGE_DEST")"
-    cp "$SPLASH_IMAGE_SRC" "$SPLASH_IMAGE_DEST"
-    sudo chown "$(whoami)":"$(whoami)" "$SPLASH_IMAGE_DEST"
+    echo "➡️ Copying splash image (system-wide)..."
+    sudo mkdir -p "$(dirname "$SPLASH_IMAGE_DEST")"
+    sudo cp "$SPLASH_IMAGE_SRC" "$SPLASH_IMAGE_DEST"
+    sudo chown root:root "$SPLASH_IMAGE_DEST"
 fi
 
 if [ -f "$SPLASH_VIDEO_SRC" ]; then
-    echo "➡️ Copying splash video..."
-    mkdir -p "$(dirname "$SPLASH_VIDEO_DEST")"
-    cp "$SPLASH_VIDEO_SRC" "$SPLASH_VIDEO_DEST"
-    sudo chown "$(whoami)":"$(whoami)" "$SPLASH_VIDEO_DEST"
+    echo "➡️ Copying splash video (system-wide)..."
+    sudo mkdir -p "$(dirname "$SPLASH_VIDEO_DEST")"
+    sudo cp "$SPLASH_VIDEO_SRC" "$SPLASH_VIDEO_DEST"
+    sudo chown root:root "$SPLASH_VIDEO_DEST"
 fi
-
 
 plasma_wallpaper_config="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
 if [ -f "$SPLASH_IMAGE_SRC" ] && [ -f "$plasma_wallpaper_config" ]; then
@@ -183,10 +199,10 @@ if [ -d "$SPLASH_SRC_DIR" ]; then
     echo "➡️ Building standalone animated splash app (this may take a while, please be patient 🥺🥺)..."
     mkdir -p "$SPLASH_BUILD_DIR"
     cd "$SPLASH_BUILD_DIR"
-    
+
     qmake ../nezuko-splash.pro
     make -j$(nproc)
-    
+
     if [ -f "nezuko-splash" ]; then
         # Copy the executable
         cp nezuko-splash "$SPLASH_EXEC"
@@ -232,7 +248,27 @@ EOL
 # -------------------------
 if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
     echo "➡️ Setting NezukoKamado as the default Konsole color scheme for all profiles..."
-    sed -i 's/^ColorScheme=.*/ColorScheme=NezukoKamado/' "$KONSOLE_DIR"/*.profile
+    for profile in "$KONSOLE_DIR"/*.profile; do
+        # Check if ColorScheme line exists
+        if grep -q "^ColorScheme=" "$profile"; then
+            sed -i 's/^ColorScheme=.*/ColorScheme=NezukoKamado/' "$profile"
+        else
+            echo "ColorScheme=NezukoKamado" >> "$profile"
+        fi
+    done
+
+    # Also set as default in the main konsole configuration
+    KONSOLE_CONFIG="$HOME/.config/konsolerc"
+    if [ -f "$KONSOLE_CONFIG" ]; then
+        if grep -q "^DefaultProfile=" "$KONSOLE_CONFIG"; then
+            # Find the first profile and set it to use our color scheme
+            first_profile=$(ls "$KONSOLE_DIR"/*.profile 2>/dev/null | head -n1)
+            if [ -n "$first_profile" ]; then
+                profile_name=$(basename "$first_profile" .profile)
+                sed -i "s/^DefaultProfile=.*/DefaultProfile=$profile_name/" "$KONSOLE_CONFIG"
+            fi
+        fi
+    fi
 fi
 
 # -------------------------
@@ -266,3 +302,4 @@ echo "   - Icons:          $ICON_NAME"
 echo "   - Cursors:        $CURSOR_NAME"
 echo "   - Colors:         Nezuko"
 echo "➡️ Your standalone animated splash will run at login."
+echo "➡️ Konsole color scheme has been set as default for all profiles."
