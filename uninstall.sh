@@ -8,7 +8,7 @@ echo "🗑️  Uninstalling Nezuko KDE theme..."
 ICON_DIR="$HOME/.local/share/icons"
 CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
-LOOKFEEL_DIR="$HOME/.local/share/plasma/look-and-feel"
+LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"  # Changed to system-wide
 COLOR_DIR="$HOME/.local/share/color-schemes"
 
 # Theme names
@@ -41,18 +41,53 @@ remove_theme_component() {
     fi
 }
 
+# Function: remove system component safely
+remove_system_theme_component() {
+    local dest=$1
+    local name=$2
+
+    if [ -e "$dest" ]; then
+        echo "➡️ Removing $name (system-wide)..."
+        sudo rm -rf "$dest"
+    else
+        echo "ℹ️  $name not found, skipping."
+    fi
+}
+
 # Remove components
 remove_theme_component "$CURSOR_DIR/$CURSOR_NAME" "cursors"
 remove_theme_component "$ICON_DIR/$ICON_NAME" "icons"
 remove_theme_component "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
-remove_theme_component "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
+remove_system_theme_component "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"  # Changed to system-wide removal
 remove_theme_component "$COLOR_DIR/$COLOR_NAME" "color scheme"
+
+# Remove Konsole color scheme
+KONSOLE_DIR="$HOME/.local/share/konsole"
+KONSOLE_NAME="NezukoKamado.colorscheme"
+remove_theme_component "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
+
+# Reset Konsole profiles to default color scheme
+if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
+    echo "➡️ Resetting Konsole profiles to default color scheme..."
+    for profile in "$KONSOLE_DIR"/*.profile; do
+        if grep -q "^ColorScheme=NezukoKamado" "$profile"; then
+            sed -i 's/^ColorScheme=NezukoKamado/ColorScheme=Breeze/g' "$profile"
+        fi
+    done
+fi
 
 # Remove standalone splash if installed
 SPLASH_BIN="$HOME/.local/bin/nezuko-splash"
 if [ -f "$SPLASH_BIN" ]; then
     echo "➡️ Removing standalone splash..."
     sudo rm -f "$SPLASH_BIN"
+fi
+
+# Remove splash resources
+SPLASH_RESOURCES="$HOME/.local/bin/nezuko-splash-resources"
+if [ -d "$SPLASH_RESOURCES" ]; then
+    echo "➡️ Removing splash resources..."
+    sudo rm -rf "$SPLASH_RESOURCES"
 fi
 
 # Remove autostart entry
@@ -62,4 +97,23 @@ if [ -f "$AUTOSTART_FILE" ]; then
     rm -f "$AUTOSTART_FILE"
 fi
 
+# Reset wallpaper if it was set to Nezuko background
+plasma_wallpaper_config="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+if [ -f "$plasma_wallpaper_config" ]; then
+    if grep -q "background.png" "$plasma_wallpaper_config"; then
+        echo "➡️ Resetting wallpaper configuration..."
+        sed -i '/Image=.*background\.png/d' "$plasma_wallpaper_config"
+    fi
+fi
+
+# Reset lockscreen wallpaper if it was set to Nezuko background
+KSCREENLOCKER_CONF="$HOME/.config/kscreenlockerrc"
+if [ -f "$KSCREENLOCKER_CONF" ]; then
+    if grep -q "background.png" "$KSCREENLOCKER_CONF"; then
+        echo "➡️ Resetting lockscreen wallpaper configuration..."
+        sed -i '/Wallpaper=.*background\.png/d' "$KSCREENLOCKER_CONF"
+    fi
+fi
+
 echo "✅ Uninstallation complete!"
+echo "ℹ️  You may need to manually select a different theme in System Settings > Appearance"

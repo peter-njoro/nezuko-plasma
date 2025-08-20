@@ -22,11 +22,10 @@ LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
 KONSOLE_NAME="NezukoKamado.colorscheme"
 
-ICON_PACK_DIR="icons/$ICON_NAME/scalable"
 BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"
 
 # Create all necessary directories
-mkdir -p "$ICON_DIR" "$CURSOR_DIR" "$PLASMA_DIR" "$COLOR_DIR" "$LOCAL_BIN" "$ICON_PACK_DIR"
+mkdir -p "$ICON_DIR" "$CURSOR_DIR" "$PLASMA_DIR" "$COLOR_DIR" "$LOCAL_BIN"
 
 # -------------------------
 # Helper functions
@@ -79,16 +78,31 @@ recolor_svg() {
 }
 
 # -------------------------
+# Prepare Nezuko icon pack
+# -------------------------
+# First copy the original Nezuko icons to the destination
+NEZUKO_ICON_SRC="icons/$ICON_NAME"
+NEZUKO_ICON_DEST="$ICON_DIR/$ICON_NAME"
+
+if [ -d "$NEZUKO_ICON_SRC" ]; then
+    echo "➡️ Copying base Nezuko icons..."
+    rm -rf "$NEZUKO_ICON_DEST"
+    cp -r "$NEZUKO_ICON_SRC" "$NEZUKO_ICON_DEST"
+else
+    echo "⚠️  Base Nezuko icons not found at $NEZUKO_ICON_SRC, skipping."
+fi
+
+# -------------------------
 # Recolor Breeze icons into Nezuko pack
 # -------------------------
-if [ -d "$BREEZE_ICON_SRC" ]; then
+if [ -d "$BREEZE_ICON_SRC" ] && [ -d "$NEZUKO_ICON_DEST" ]; then
     echo "🎨 Copying and recoloring Breeze icons to pink (as $ICON_NAME)..."
-    mkdir -p "$ICON_PACK_DIR"
+    mkdir -p "$NEZUKO_ICON_DEST/scalable"
 
     # Process each SVG
     find "$BREEZE_ICON_SRC" -name "*.svg" | while read -r breeze_svg; do
         filename=$(basename "$breeze_svg")
-        dest_svg="$ICON_PACK_DIR/$filename"
+        dest_svg="$NEZUKO_ICON_DEST/scalable/$filename"
 
         # Only process if not already in Nezuko pack
         if [ ! -f "$dest_svg" ]; then
@@ -99,32 +113,32 @@ if [ -d "$BREEZE_ICON_SRC" ]; then
     done
     echo "✅ Breeze icons recolored and added to $ICON_NAME pack"
 else
-    echo "⚠️  Breeze icons not found at $BREEZE_ICON_SRC, skipping."
+    echo "⚠️  Breeze icons not found at $BREEZE_ICON_SRC or Nezuko icon destination not ready, skipping."
 fi
 
 # -------------------------
 # Recolor existing Nezuko icons
 # -------------------------
-if [ -d "$ICON_PACK_DIR" ]; then
+if [ -d "$NEZUKO_ICON_DEST/scalable" ]; then
     echo "🎨 Ensuring all $ICON_NAME icons are pink..."
-    for svg in "$ICON_PACK_DIR"/*.svg; do
+    for svg in "$NEZUKO_ICON_DEST/scalable"/*.svg; do
         [ -e "$svg" ] || continue
         # Force recolor to ensure consistency
         sed -i 's/fill:#[0-9a-fA-F]*/fill:#ff66aa/g' "$svg"
     done
     echo "✅ $ICON_NAME icons verified to be pink"
 else
-    echo "⚠️  $ICON_NAME icon directory $ICON_PACK_DIR not found, skipping recolor."
+    echo "⚠️  $ICON_NAME icon directory $NEZUKO_ICON_DEST/scalable not found, skipping recolor."
 fi
 
 # -------------------------
 # Run PNG fallback conversion
 # -------------------------
-CONVERT_SCRIPT="icons/$ICON_NAME/convert_svgs.sh"
+CONVERT_SCRIPT="$NEZUKO_ICON_DEST/convert_svgs.sh"
 if [ -f "$CONVERT_SCRIPT" ]; then
     echo "🎨 Generating PNG fallbacks from SVGs..."
     chmod +x "$CONVERT_SCRIPT"
-    (cd "icons/$ICON_NAME" && ./convert_svgs.sh)
+    (cd "$NEZUKO_ICON_DEST" && ./convert_svgs.sh)
 else
     echo "⚠️ No convert_svgs.sh found at $CONVERT_SCRIPT, skipping PNG fallback generation."
 fi
@@ -133,7 +147,7 @@ fi
 # Install theme components
 # -------------------------
 install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "cursors"
-install_theme_component "icons/$ICON_NAME" "$ICON_DIR/$ICON_NAME" "icons"
+# Icons are already installed above, no need to install again
 install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 install_system_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"  # Changed to system-wide
 install_theme_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
