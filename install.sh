@@ -306,6 +306,31 @@ if [ -f "$SPLASH_IMAGE_SRC" ]; then
 fi
 
 # -------------------------
+# Create necessary directories and metadata for plasma theme
+# -------------------------
+mkdir -p "plasma/$PLASMA_NAME/widgets/shadows"
+mkdir -p "plasma/$PLASMA_NAME/shadows"
+mkdir -p "plasma/$PLASMA_NAME/translucent/dialogs"
+mkdir -p "plasma/$PLASMA_NAME/opaque/dialogs"
+
+# Create the metadata file if it doesn't exist
+if [ ! -f "plasma/$PLASMA_NAME/metadata.desktop" ]; then
+    cat > "plasma/$PLASMA_NAME/metadata.desktop" << 'EOL'
+[Desktop Entry]
+Name=Nezuko
+Comment=Nezuko-inspired KDE Plasma theme with glassy dialogs, rounded corners, and shadows
+X-KDE-PluginInfo-Author=Peter Chege
+X-KDE-PluginInfo-Email=peterchegen12@gmail.com
+X-KDE-PluginInfo-Name=Nezuko
+X-KDE-PluginInfo-Version=1.2
+X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
+X-KDE-PluginInfo-Category=Plasma Theme
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=true
+EOL
+fi
+
+# -------------------------
 # Completion message
 # -------------------------
 echo "✅ Installation complete!"

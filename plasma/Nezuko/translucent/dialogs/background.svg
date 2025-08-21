@@ -1,17 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
-  <!-- Transparent background -->
-  <rect x="0" y="0" width="256" height="256" fill="none"/>
+  <defs>
+    <filter id="translucentBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+    <linearGradient id="translucentGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(255,182,193,0.6)"/>
+      <stop offset="100%" stop-color="rgba(255,105,180,0.4)"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Rounded rectangle with blur-friendly translucency -->
+  <!-- Translucent dialog background -->
   <rect x="8" y="8" width="240" height="240" rx="20" ry="20"
-        fill="rgba(30,30,30,0.6)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
-
-  <!-- Drop shadow -->
-  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-    <feDropShadow dx="0" dy="4" stdDeviation="8"
-                  flood-color="black" flood-opacity="0.4"/>
-  </filter>
-
-  <rect x="8" y="8" width="240" height="240" rx="20" ry="20"
-        fill="rgba(30,30,30,0.4)" filter="url(#shadow)"/>
+        fill="url(#translucentGradient)" filter="url(#translucentBlur)"
+        stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
 </svg>

@@ -10,6 +10,8 @@ CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
 LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"  # Changed to system-wide
 COLOR_DIR="$HOME/.local/share/color-schemes"
+KONSOLE_DIR="$HOME/.local/share/konsole"
+LOCAL_BIN="$HOME/.local/bin"
 
 # Theme names
 CURSOR_NAME="Nezuko-Cursors"
@@ -17,6 +19,7 @@ ICON_NAME="Nezuko-Icons"
 PLASMA_NAME="Nezuko"
 LOOKFEEL_NAME="org.kde.nezuko"
 COLOR_NAME="Nezuko.colors"
+KONSOLE_NAME="NezukoKamado.colorscheme"
 
 # Function: fix ownership safely
 fix_ownership() {
@@ -60,10 +63,6 @@ remove_theme_component "$ICON_DIR/$ICON_NAME" "icons"
 remove_theme_component "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 remove_system_theme_component "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"  # Changed to system-wide removal
 remove_theme_component "$COLOR_DIR/$COLOR_NAME" "color scheme"
-
-# Remove Konsole color scheme
-KONSOLE_DIR="$HOME/.local/share/konsole"
-KONSOLE_NAME="NezukoKamado.colorscheme"
 remove_theme_component "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # Reset Konsole profiles to default color scheme
@@ -77,17 +76,17 @@ if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
 fi
 
 # Remove standalone splash if installed
-SPLASH_BIN="$HOME/.local/bin/nezuko-splash"
+SPLASH_BIN="$LOCAL_BIN/nezuko-splash"
 if [ -f "$SPLASH_BIN" ]; then
     echo "➡️ Removing standalone splash..."
-    sudo rm -f "$SPLASH_BIN"
+    rm -f "$SPLASH_BIN"
 fi
 
 # Remove splash resources
-SPLASH_RESOURCES="$HOME/.local/bin/nezuko-splash-resources"
+SPLASH_RESOURCES="$LOCAL_BIN/nezuko-splash-resources"
 if [ -d "$SPLASH_RESOURCES" ]; then
     echo "➡️ Removing splash resources..."
-    sudo rm -rf "$SPLASH_RESOURCES"
+    rm -rf "$SPLASH_RESOURCES"
 fi
 
 # Remove autostart entry
@@ -117,3 +116,4 @@ fi
 
 echo "✅ Uninstallation complete!"
 echo "ℹ️  You may need to manually select a different theme in System Settings > Appearance"
+echo "ℹ️  You may need to restart plasmashell: kquitapp plasmashell && plasmashell &"
