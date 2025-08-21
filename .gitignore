@@ -1,9 +1,40 @@
-icons/Nezuko-Icons/png-fallbacks
+# Ignore all PNGs except key theme images and screenshots
 *.png
 !look-and-feel/org.kde.nezuko/contents/splash/images/background.png
-!screenshot.png
 !look-and-feel/org.kde.nezuko/contents/previews/preview.png
 !background.png
-nezuko-splash/build
-.vscode
+!screenshot.png
+
+# Ignore icon PNG fallbacks (generated)
+icons/Nezuko-Icons/png-fallbacks/
+
+# Ignore build artifacts
+nezuko-splash/build/
+build/
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+
+# Ignore user/editor/project files
+.vscode/
+.idea/
+*.user
+*.swp
+*~
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore backup files
+*~
+*.bak
+
+# Ignore plasma theme cache
 
