@@ -1,7 +1,7 @@
 # Ignore all PNGs except key theme images and screenshots
 *.png
-!look-and-feel/org.kde.nezuko/contents/splash/images/background.png
-!look-and-feel/org.kde.nezuko/contents/previews/preview.png
+!look-and-feel/org.kde.nezuko.desktop/contents/splash/images/background.png
+!look-and-feel/org.kde.nezuko.desktop/contents/previews/preview.png
 !background.png
 !screenshot.png
 

@@ -8,7 +8,7 @@ X-KDE-PluginInfo-Version=1.0
 X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
 X-KDE-PluginInfo-Category=LookAndFeel
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Name=org.kde.nezuko
+X-KDE-PluginInfo-Name=org.kde.nezuko.desktop
 
 [LookAndFeel]
 # References to your custom components
