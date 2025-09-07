@@ -1,53 +1,53 @@
 [Background]
-Color=#2E2A2E
+Color=#1A0F1A
 
 [Foreground]
 Color=#FFC0CB
 
 [Color0]
-Color=#2E2A2E
+Color=#1A0F1A
 
 [Color1]
-Color=#FF4081
-
-[Color2]
-Color=#4CAF50
-
-[Color3]
-Color=#FFD180
-
-[Color4]
-Color=#81C784
-
-[Color5]
-Color=#F5A9B8
-
-[Color6]
-Color=#A5D6A7
-
-[Color7]
-Color=#FFC0CB
-
-[Color8]
-Color=#5E5E5E
-
-[Color9]
 Color=#FF69B4
 
+[Color2]
+Color=#FF85C1
+
+[Color3]
+Color=#FFA7D7
+
+[Color4]
+Color=#FFB6E6
+
+[Color5]
+Color=#FFC7F3
+
+[Color6]
+Color=#FFD6F9
+
+[Color7]
+Color=#FFE6FF
+
+[Color8]
+Color=#4A2A4A
+
+[Color9]
+Color=#FF4081
+
 [Color10]
-Color=#4CAF50
+Color=#FF94D4
 
 [Color11]
-Color=#FFD180
+Color=#FFAAE0
 
 [Color12]
-Color=#81C784
+Color=#FFBEEB
 
 [Color13]
-Color=#F5A9B8
+Color=#FFD1F5
 
 [Color14]
-Color=#A5D6A7
+Color=#FFE0FB
 
 [Color15]
 Color=#FFFFFF
@@ -57,7 +57,7 @@ Color=#FF69B4
 
 [Selection]
 Background=#FF69B4
-Foreground=#2E2A2E
+Foreground=#1A0F1A
 
 [General]
-Description=Nezuko Kamado inspired
+Description=Nezuko Kamado inspired - Vibrant pink terminal theme
