@@ -12,7 +12,11 @@ Includes:
 
 ## 🖼️ Preview
 
-![Nezuko Plasma Theme Screenshot](look-and-feel/org.kde.nezuko.desktop/contents/previews/preview.png)
+![Nezuko Plasma Theme Screenshot](https://github.com/user-attachments/assets/1ace2741-fef6-4e38-8359-cf6ce73defe0)
+
+
+![kde-plasma-nezuko-kamado-inspired-pink-theme-full-plasma-v0-c3rhrhxyg4mf1](https://github.com/user-attachments/assets/65b4d4e9-8dca-46e4-b470-a3831ab5ccb3)
+
 
 ---
 
