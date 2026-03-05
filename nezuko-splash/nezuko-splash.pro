@@ -1,6 +1,7 @@
 QT += quick multimedia
 
-CONFIG += c++11
+CONFIG += c++17
+CONFIG += qt
 
 SOURCES += main.cpp
 
@@ -12,3 +13,6 @@ QML_IMPORT_PATH = .
 
 TARGET = nezuko-splash
 TEMPLATE = app
+
+# Ensure we're using Qt 6
+REQUIRES = qtConfig(opengl)

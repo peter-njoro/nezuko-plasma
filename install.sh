@@ -3,10 +3,129 @@
 set -euo pipefail
 
 echo "🔮 Installing Nezuko KDE theme..."
+echo ""
+
+# ⚠️  CUSTOM XDG_CONFIG_HOME SETUP
+# =========================================
+# To use a custom config directory (e.g., ~/.config-arch), you have two options:
+#
+# Option 1: Set environment variable before running this script
+#   export XDG_CONFIG_HOME=$HOME/.config-arch
+#   ./install.sh
+#
+# Option 2: Manually edit the CONFIG_HOME variable in this script
+#   (Search for "TEMPORARY: Custom config directory support" below)
+#   Change: CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+#   To:    CONFIG_HOME="$HOME/.config-arch"
+#
+# This is useful for testing the theme without affecting your main config.
+echo "Current XDG_CONFIG_HOME: ${XDG_CONFIG_HOME:-not set (will use ~/.config)}"
+echo ""
+
+# -------------------------
+# Detect distribution and install dependencies
+# -------------------------
+detect_distro() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        echo "$ID"
+    elif [ -f /etc/redhat-release ]; then
+        echo "rhel"
+    elif [ -f /etc/debian_version ]; then
+        echo "debian"
+    else
+        echo "unknown"
+    fi
+}
+
+install_dependencies() {
+    local distro=$1
+    
+    echo "📦 Detecting system packages and installing dependencies..."
+    
+    case "$distro" in
+        arch)
+            echo "📦 Detected Arch Linux. Installing dependencies via pacman..."
+            sudo pacman -Syu --noconfirm
+            sudo pacman -S --noconfirm \
+                inkscape librsvg \
+                qt6-base qt6-declarative qt6-multimedia \
+                base-devel cmake git
+            echo "✅ Arch Linux dependencies installed"
+            ;;
+        fedora|rhel|centos)
+            echo "📦 Detected Fedora/RHEL. Installing dependencies via dnf..."
+            sudo dnf check-update || true
+            sudo dnf install -y \
+                inkscape librsvg \
+                qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtmultimedia-devel \
+                gcc g++ make cmake git \
+                qt6-qtbase qt6-qtdeclarative
+            echo "✅ Fedora/RHEL dependencies installed"
+            ;;
+        debian|ubuntu)
+            echo "📦 Detected Debian/Ubuntu. Installing dependencies via apt..."
+            sudo apt-get update
+            sudo apt-get install -y \
+                inkscape librsvg2-bin \
+                qt6-base-dev qt6-declarative-dev qt6-multimedia-dev \
+                libqt6multimedia6 libqt6multimediagsttools6 \
+                build-essential cmake git
+            echo "✅ Debian/Ubuntu dependencies installed"
+            ;;
+        opensuse*|sle)
+            echo "📦 Detected openSUSE. Installing dependencies via zypper..."
+            sudo zypper refresh
+            sudo zypper install -y \
+                inkscape librsvg \
+                qt6-base-devel qt6-declarative-devel qt6-multimedia-devel \
+                gcc g++ make cmake git
+            echo "✅ openSUSE dependencies installed"
+            ;;
+        *)
+            echo "⚠️  Unknown distribution ($distro). Attempting to install with available package manager..."
+            if command -v pacman >/dev/null 2>&1; then
+                sudo pacman -Syu --noconfirm
+                sudo pacman -S --noconfirm inkscape librsvg qt6-base qt6-declarative qt6-multimedia base-devel cmake git
+            elif command -v dnf >/dev/null 2>&1; then
+                sudo dnf check-update || true
+                sudo dnf install -y inkscape librsvg qt6-qtbase qt6-qtdeclarative qt6-qtmultimedia gcc g++ make cmake git
+            elif command -v apt-get >/dev/null 2>&1; then
+                sudo apt-get update
+                sudo apt-get install -y inkscape librsvg2-bin qt6-base qt6-declarative qt6-multimedia-dev build-essential cmake git
+            elif command -v zypper >/dev/null 2>&1; then
+                sudo zypper refresh
+                sudo zypper install -y inkscape librsvg qt6-base-devel qt6-declarative-devel qt6-multimedia-devel gcc g++ make cmake git
+            else
+                echo "❌ No recognized package manager found. Please install the required packages manually:"
+                echo "   - inkscape"
+                echo "   - librsvg"
+                echo "   - Qt6 (base, declarative, multimedia)"
+                echo "   - Build tools (gcc, make, cmake)"
+                exit 1
+            fi
+            echo "✅ Dependencies installed with fallback package manager"
+            ;;
+    esac
+}
+
+# Run dependency installation
+DISTRO=$(detect_distro)
+install_dependencies "$DISTRO"
 
 # -------------------------
 # Directories & theme names
 # -------------------------
+# ⚠️  TEMPORARY: Custom config directory support for non-standard XDG_CONFIG_HOME
+# If you have a custom config directory at ~/.config-arch (or elsewhere), 
+# uncomment and modify the CONFIG_HOME line below to use it for theme installation
+#
+# Example: For ~/.config-arch
+# CONFIG_HOME="$HOME/.config-arch"
+#
+# Leave commented to use default ~/.config
+CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+
 ICON_DIR="$HOME/.local/share/icons"
 CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
@@ -14,7 +133,7 @@ LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"
 COLOR_DIR="$HOME/.local/share/color-schemes"
 KONSOLE_DIR="$HOME/.local/share/konsole"
 LOCAL_BIN="$HOME/.local/bin"
-AUTOSTART_DIR="$HOME/.config/autostart"
+AUTOSTART_DIR="$CONFIG_HOME/autostart"
 
 CURSOR_NAME="Nezuko-Cursors"
 ICON_NAME="Nezuko-Icons"
@@ -61,6 +180,22 @@ install_system_theme_component() {
     sudo rm -rf "$dest"
     sudo cp -r "$src" "$dest"
     sudo chown -R root:root "$dest"
+}
+
+install_file_component() {
+    local src=$1
+    local dest=$2
+    local name=$3
+
+    if [ ! -f "$src" ]; then
+        echo "⚠️  Source file $src for $name not found, skipping."
+        return
+    fi
+
+    mkdir -p "$(dirname "$dest")"
+    echo "➡️ Installing $name..."
+    cp "$src" "$dest"
+    chown "$(whoami)":"$(whoami)" "$dest"
 }
 
 recolor_svg() {
@@ -209,7 +344,7 @@ fi
 install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "cursors"
 install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
 install_system_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
-install_theme_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
+install_file_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # -------------------------
 # Color scheme
@@ -248,19 +383,65 @@ SPLASH_EXEC_DIR="$LOCAL_BIN/nezuko-splash-resources"
 
 if [ -d "$SPLASH_SRC_DIR" ]; then
     echo "➡️ Building standalone animated splash app..."
+    
+    # Clean build directory for fresh configuration
+    if [ -d "$SPLASH_BUILD_DIR" ]; then
+        echo "🧹 Cleaning previous build artifacts..."
+        rm -rf "$SPLASH_BUILD_DIR"
+    fi
+    
     mkdir -p "$SPLASH_BUILD_DIR"
     cd "$SPLASH_SRC_DIR"
 
     if [ -f "CMakeLists.txt" ]; then
         mkdir -p build
         cd build
+        echo "🔨 Running CMake configuration..."
         cmake ..
+        echo "🔨 Building with make..."
         make -j$(nproc)
     elif [ -f "nezuko-splash.pro" ]; then
         mkdir -p build
         cd build
-        qmake ..
-        make -j$(nproc)
+        echo "🔨 Running qmake6 configuration..."
+        # Use qmake6 for Qt6, fallback to qmake if qmake6 not available
+        if command -v qmake6 >/dev/null 2>&1; then
+            qmake6 ..
+        else
+            qmake ..
+        fi
+        echo "🔨 Building with make..."
+        make -j$(nproc) 2>&1 | tee build.log
+        
+        # Check if build failed due to multimedia module
+        if [ ! -f "nezuko-splash" ] && grep -q "Unknown module\|multimedia" build.log 2>/dev/null; then
+            echo "⚠️  Qt6 multimedia module issue detected!"
+            echo "🔍 Checking Qt6 installation..."
+            if command -v qtpaths >/dev/null 2>&1; then
+                echo "   Qt6 install path: $(qtpaths --install-prefix)"
+            fi
+            if command -v pkg-config >/dev/null 2>&1; then
+                pkg-config --modversion Qt6Multimedia 2>/dev/null || echo "   ⚠️  Qt6Multimedia pkg-config not found"
+            fi
+            echo ""
+            echo "💡 Solution: Install Qt6 multimedia development packages:"
+            case "$DISTRO" in
+                debian|ubuntu)
+                    echo "   sudo apt install -y qt6-multimedia-dev libqt6multimedia6"
+                    ;;
+                arch)
+                    echo "   sudo pacman -S qt6-multimedia"
+                    ;;
+                fedora|rhel|centos)
+                    echo "   sudo dnf install -y qt6-qtmultimedia-devel"
+                    ;;
+                opensuse*|sle)
+                    echo "   sudo zypper install -y qt6-multimedia-devel"
+                    ;;
+            esac
+            echo ""
+            echo "   Then re-run the installer."
+        fi
     else
         echo "⚠️ No build system found in splash directory, skipping build."
         cd ../..
@@ -278,7 +459,8 @@ if [ -d "$SPLASH_SRC_DIR" ]; then
 
         echo "✅ Standalone splash installed at $SPLASH_EXEC"
     else
-        echo "⚠️ Failed to build standalone splash executable."
+        echo "❌ Failed to build standalone splash executable."
+        echo "💡 See build.log above for details. This may not be critical for basic theme installation."
     fi
 
     cd ../..
@@ -320,7 +502,7 @@ if compgen -G "$KONSOLE_DIR/*.profile" > /dev/null; then
         fi
     done
 
-    KONSOLE_CONFIG="$HOME/.config/konsolerc"
+    KONSOLE_CONFIG="$CONFIG_HOME/konsolerc"
     if [ -f "$KONSOLE_CONFIG" ]; then
         first_profile=$(ls "$KONSOLE_DIR"/*.profile 2>/dev/null | head -n1)
         if [ -n "$first_profile" ]; then
@@ -333,7 +515,7 @@ fi
 # -------------------------
 # Set lockscreen wallpaper
 # -------------------------
-KSCREENLOCKER_CONF="$HOME/.config/kscreenlockerrc"
+KSCREENLOCKER_CONF="$CONFIG_HOME/kscreenlockerrc"
 if [ -f "$SPLASH_IMAGE_SRC" ]; then
     echo "➡️ Setting lockscreen wallpaper..."
     if grep -q "^\[Greeter\]" "$KSCREENLOCKER_CONF" 2>/dev/null; then
@@ -350,14 +532,21 @@ fi
 # -------------------------
 # Set Plasma wallpaper
 # -------------------------
-PLASMA_CONFIG="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+PLASMA_CONFIG="$CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc"
 if [ -f "$SPLASH_IMAGE_SRC" ] && [ -f "$PLASMA_CONFIG" ]; then
     echo "➡️ Setting Plasma wallpaper..."
+    # Escape special characters in path for sed
+    ESCAPED_PATH=$(printf '%s\n' "file://$PWD/$SPLASH_IMAGE_SRC" | sed -e 's/[\/&]/\\&/g')
+    
     if grep -q "^Image=" "$PLASMA_CONFIG"; then
-        sed -i "s|^Image=.*|Image=file://$PWD/$SPLASH_IMAGE_SRC|" "$PLASMA_CONFIG"
+        sed -i "s|^Image=.*|Image=$ESCAPED_PATH|" "$PLASMA_CONFIG"
     else
-        # Find the first image entry and replace it
-        sed -i "0,/^\[Containments\]\[[0-9]*\]\[General\]$/ { /^wallpaper=/s/.*/wallpaper=file:\/\/$PWD\/$SPLASH_IMAGE_SRC/ }" "$PLASMA_CONFIG"
+        # Find and update wallpaper setting
+        if grep -q "^wallpaper=" "$PLASMA_CONFIG"; then
+            sed -i "s|^wallpaper=.*|wallpaper=$ESCAPED_PATH|" "$PLASMA_CONFIG"
+        else
+            echo "wallpaper=$ESCAPED_PATH" >> "$PLASMA_CONFIG"
+        fi
     fi
 fi
 
