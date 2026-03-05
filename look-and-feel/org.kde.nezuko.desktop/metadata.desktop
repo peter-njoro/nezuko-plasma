@@ -4,14 +4,16 @@ Comment=Nezuko global look-and-feel theme
 X-KDE-ServiceTypes=Plasma/LookAndFeel
 X-KDE-PluginInfo-Author=Peter Njoroge Chege
 X-KDE-PluginInfo-Email=peterchegen12@gmail.com
-X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Version=1.2
 X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
 X-KDE-PluginInfo-Category=LookAndFeel
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-Name=org.kde.nezuko.desktop
 
 [LookAndFeel]
-# References to your custom components
+PlasmaStyle=Nezuko
+Icons=Nezuko-Icons
+Colors=Nezuko
 CursorTheme=Nezuko-Cursors
-IconTheme=Nezuko-Icons
-PlasmaTheme=Nezuko-Plasma
+WindowDecoration=org.kde.breeze
+Fallback=org.kde.breeze.desktop

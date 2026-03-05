@@ -3,8 +3,17 @@
 set -euo pipefail
 
 echo "🗑️  Uninstalling Nezuko KDE theme..."
+echo ""
+
+# ⚠️  CUSTOM XDG_CONFIG_HOME SETUP
+# If you used a custom config directory during installation, set it here:
+# export XDG_CONFIG_HOME=$HOME/.config-arch
+# ./uninstall.sh
+echo "Current XDG_CONFIG_HOME: ${XDG_CONFIG_HOME:-not set (will use ~/.config)}"
+echo ""
 
 # KDE user dirs
+CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 ICON_DIR="$HOME/.local/share/icons"
 CURSOR_DIR="$HOME/.local/share/icons"
 PLASMA_DIR="$HOME/.local/share/plasma/desktoptheme"
@@ -12,7 +21,7 @@ LOOKFEEL_DIR="/usr/share/plasma/look-and-feel"
 COLOR_DIR="$HOME/.local/share/color-schemes"
 KONSOLE_DIR="$HOME/.local/share/konsole"
 LOCAL_BIN="$HOME/.local/bin"
-AUTOSTART_DIR="$HOME/.config/autostart"
+AUTOSTART_DIR="$CONFIG_HOME/autostart"
 
 # Theme names
 CURSOR_NAME="Nezuko-Cursors"
@@ -70,7 +79,7 @@ reset_konsole_profiles() {
         done
 
         # Reset default profile in konsolerc
-        KONSOLE_CONFIG="$HOME/.config/konsolerc"
+        KONSOLE_CONFIG="$CONFIG_HOME/konsolerc"
         if [ -f "$KONSOLE_CONFIG" ]; then
             if grep -q "^DefaultProfile=" "$KONSOLE_CONFIG"; then
                 echo "Resetting default Konsole profile..."
@@ -83,7 +92,7 @@ reset_konsole_profiles() {
 # Function: reset wallpaper configurations
 reset_wallpaper_configs() {
     # Reset Plasma wallpaper
-    PLASMA_CONFIG="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+    PLASMA_CONFIG="$CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc"
     if [ -f "$PLASMA_CONFIG" ]; then
         if grep -q "background.png" "$PLASMA_CONFIG"; then
             echo "➡️ Resetting Plasma wallpaper configuration..."
@@ -95,7 +104,7 @@ reset_wallpaper_configs() {
     fi
 
     # Reset lockscreen wallpaper
-    KSCREENLOCKER_CONF="$HOME/.config/kscreenlockerrc"
+    KSCREENLOCKER_CONF="$CONFIG_HOME/kscreenlockerrc"
     if [ -f "$KSCREENLOCKER_CONF" ]; then
         if grep -q "background.png" "$KSCREENLOCKER_CONF"; then
             echo "➡️ Resetting lockscreen wallpaper configuration..."
@@ -135,19 +144,32 @@ remove_splash_components() {
 # Function: check if theme is currently active
 check_active_theme() {
     echo "🔍 Checking if Nezuko theme is currently active..."
+    echo ""
 
-    # Check plasma style
-    if command -v kreadconfig5 >/dev/null 2>&1; then
-        CURRENT_PLASMA=$(kreadconfig5 --file plasmarc --group Theme --key name)
+    # Check plasma style (try KDE6 first, then fallback to KDE5)
+    if command -v kreadconfig6 >/dev/null 2>&1; then
+        CURRENT_PLASMA=$(kreadconfig6 --file plasmarc --group Theme --key name 2>/dev/null || echo "")
+        if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ]; then
+            echo "⚠️  WARNING: Nezuko plasma style is currently active!"
+            echo "   Please change to another theme in System Settings > Appearance"
+        fi
+    elif command -v kreadconfig5 >/dev/null 2>&1; then
+        CURRENT_PLASMA=$(kreadconfig5 --file plasmarc --group Theme --key name 2>/dev/null || echo "")
         if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ]; then
             echo "⚠️  WARNING: Nezuko plasma style is currently active!"
             echo "   Please change to another theme in System Settings > Appearance"
         fi
     fi
 
-    # Check icons
-    if command -v kreadconfig5 >/dev/null 2>&1; then
-        CURRENT_ICONS=$(kreadconfig5 --file kdeglobals --group Icons --key Theme)
+    # Check icons (try KDE6 first, then fallback to KDE5)
+    if command -v kreadconfig6 >/dev/null 2>&1; then
+        CURRENT_ICONS=$(kreadconfig6 --file kdeglobals --group Icons --key Theme 2>/dev/null || echo "")
+        if [ "$CURRENT_ICONS" = "$ICON_NAME" ]; then
+            echo "⚠️  WARNING: Nezuko icons are currently active!"
+            echo "   Please change to another icon theme in System Settings > Appearance"
+        fi
+    elif command -v kreadconfig5 >/dev/null 2>&1; then
+        CURRENT_ICONS=$(kreadconfig5 --file kdeglobals --group Icons --key Theme 2>/dev/null || echo "")
         if [ "$CURRENT_ICONS" = "$ICON_NAME" ]; then
             echo "⚠️  WARNING: Nezuko icons are currently active!"
             echo "   Please change to another icon theme in System Settings > Appearance"
@@ -161,18 +183,20 @@ check_active_theme() {
             echo "   Please change to another cursor theme in System Settings > Appearance"
         fi
     fi
+    echo ""
 }
 
 # Function: refresh system caches
 refresh_system_caches() {
-    echo "🔄 Refreshing system caches..."
-    if command -v kbuildsycoca5 >/dev/null 2>&1; then
-        kbuildsycoca5
-    fi
-
+    echo "➡️ Refreshing system caches..."
     if command -v kbuildsycoca6 >/dev/null 2>&1; then
         kbuildsycoca6
     fi
+
+    if command -v kbuildsycoca5 >/dev/null 2>&1; then
+        kbuildsycoca5
+    fi
+    echo "✅ System caches refreshed"
 }
 
 # -------------------------

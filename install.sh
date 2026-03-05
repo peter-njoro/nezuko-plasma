@@ -321,11 +321,36 @@ mkdir -p "plasma/$PLASMA_NAME/shadows"
 mkdir -p "plasma/$PLASMA_NAME/translucent/dialogs"
 mkdir -p "plasma/$PLASMA_NAME/opaque/dialogs"
 
+# Create Look and Feel metadata (connects all components together)
+mkdir -p "look-and-feel/$LOOKFEEL_NAME"
+echo "➡️ Creating look-and-feel metadata..."
+cat > "look-and-feel/$LOOKFEEL_NAME/metadata.desktop" << 'EOL'
+[Desktop Entry]
+Name=Nezuko
+Comment=Nezuko global look-and-feel theme
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KDE-PluginInfo-Author=Peter Njoroge Chege
+X-KDE-PluginInfo-Email=peterchegen12@gmail.com
+X-KDE-PluginInfo-Version=1.2
+X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
+X-KDE-PluginInfo-Category=LookAndFeel
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Name=org.kde.nezuko.desktop
+
+[LookAndFeel]
+PlasmaStyle=Nezuko
+Icons=Nezuko-Icons
+Colors=Nezuko
+CursorTheme=Nezuko-Cursors
+WindowDecoration=org.kde.breeze
+Fallback=org.kde.breeze.desktop
+EOL
+
 if [ ! -f "plasma/$PLASMA_NAME/metadata.desktop" ]; then
     echo "➡️ Creating plasma theme metadata..."
     cat > "plasma/$PLASMA_NAME/metadata.desktop" << 'EOL'
 [Desktop Entry]
-Name=Nezuko
+Name=Nezuko Kamado
 Comment=Nezuko-inspired KDE Plasma theme with glassy dialogs, rounded corners, and shadows
 X-KDE-PluginInfo-Author=Peter Chege
 X-KDE-PluginInfo-Email=peterchegen12@gmail.com
@@ -335,6 +360,10 @@ X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
 X-KDE-PluginInfo-Category=Plasma Theme
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
+
+[Settings]
+dialogs=true
+widgets=true
 EOL
 fi
 
