@@ -27,8 +27,10 @@ AUTOSTART_DIR="$CONFIG_HOME/autostart"
 CURSOR_NAME="Nezuko-Cursors"
 ICON_NAME="Nezuko-Icons"
 PLASMA_NAME="Nezuko"
+PLASMA_NAME_LIGHT="Nezuko-Light"
 LOOKFEEL_NAME="org.kde.nezuko.desktop"  # Updated to match install.sh
 COLOR_NAME="Nezuko.colors"
+COLOR_NAME_LIGHT="Nezuko-Light.colors"
 KONSOLE_NAME="NezukoKamado.colorscheme"
 
 # Function: fix ownership safely
@@ -149,13 +151,13 @@ check_active_theme() {
     # Check plasma style (try KDE6 first, then fallback to KDE5)
     if command -v kreadconfig6 >/dev/null 2>&1; then
         CURRENT_PLASMA=$(kreadconfig6 --file plasmarc --group Theme --key name 2>/dev/null || echo "")
-        if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ]; then
+        if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ] || [ "$CURRENT_PLASMA" = "$PLASMA_NAME_LIGHT" ]; then
             echo "⚠️  WARNING: Nezuko plasma style is currently active!"
             echo "   Please change to another theme in System Settings > Appearance"
         fi
     elif command -v kreadconfig5 >/dev/null 2>&1; then
         CURRENT_PLASMA=$(kreadconfig5 --file plasmarc --group Theme --key name 2>/dev/null || echo "")
-        if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ]; then
+        if [ "$CURRENT_PLASMA" = "$PLASMA_NAME" ] || [ "$CURRENT_PLASMA" = "$PLASMA_NAME_LIGHT" ]; then
             echo "⚠️  WARNING: Nezuko plasma style is currently active!"
             echo "   Please change to another theme in System Settings > Appearance"
         fi
@@ -208,9 +210,11 @@ echo "📋 Starting Nezuko theme uninstallation..."
 # Remove theme components
 remove_theme_component "$CURSOR_DIR/$CURSOR_NAME" "cursors"
 remove_theme_component "$ICON_DIR/$ICON_NAME" "icons"
-remove_theme_component "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
+remove_theme_component "$PLASMA_DIR/$PLASMA_NAME" "plasma style (dark)"
+remove_theme_component "$PLASMA_DIR/$PLASMA_NAME_LIGHT" "plasma style (light)"
 remove_system_theme_component "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
-remove_theme_component "$COLOR_DIR/$COLOR_NAME" "color scheme"
+remove_theme_component "$COLOR_DIR/$COLOR_NAME" "color scheme (dark)"
+remove_theme_component "$COLOR_DIR/$COLOR_NAME_LIGHT" "color scheme (light)"
 remove_theme_component "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # Remove any leftover Nezuko files in color schemes
