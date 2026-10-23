@@ -69,7 +69,7 @@ install_dependencies() {
             sudo apt-get install -y \
                 inkscape librsvg2-bin \
                 qt6-base-dev qt6-declarative-dev qt6-multimedia-dev \
-                libqt6multimedia6 libqt6multimediagsttools6 \
+                libqt6multimedia6 libqt6multimediawidgets6 \
                 build-essential cmake git
             echo "✅ Debian/Ubuntu dependencies installed"
             ;;
@@ -92,7 +92,7 @@ install_dependencies() {
                 sudo dnf install -y inkscape librsvg qt6-qtbase qt6-qtdeclarative qt6-qtmultimedia gcc g++ make cmake git
             elif command -v apt-get >/dev/null 2>&1; then
                 sudo apt-get update
-                sudo apt-get install -y inkscape librsvg2-bin qt6-base qt6-declarative qt6-multimedia-dev build-essential cmake git
+                sudo apt-get install -y inkscape librsvg2-bin qt6-base qt6-declarative qt6-multimedia-dev libqt6multimedia6 libqt6multimediawidgets6 build-essential cmake git
             elif command -v zypper >/dev/null 2>&1; then
                 sudo zypper refresh
                 sudo zypper install -y inkscape librsvg qt6-base-devel qt6-declarative-devel qt6-multimedia-devel gcc g++ make cmake git
@@ -434,7 +434,7 @@ if [ -d "$SPLASH_SRC_DIR" ]; then
             echo "💡 Solution: Install Qt6 multimedia development packages:"
             case "$DISTRO" in
                 debian|ubuntu)
-                    echo "   sudo apt install -y qt6-multimedia-dev libqt6multimedia6"
+                    echo "   sudo apt install -y qt6-multimedia-dev libqt6multimedia6 libqt6multimediawidgets6"
                     ;;
                 arch)
                     echo "   sudo pacman -S qt6-multimedia"
