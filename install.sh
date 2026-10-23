@@ -138,8 +138,10 @@ AUTOSTART_DIR="$CONFIG_HOME/autostart"
 CURSOR_NAME="Nezuko-Cursors"
 ICON_NAME="Nezuko-Icons"
 PLASMA_NAME="Nezuko"
+PLASMA_NAME_LIGHT="Nezuko-Light"
 LOOKFEEL_NAME="org.kde.nezuko.desktop"
 COLOR_NAME="Nezuko.colors"
+COLOR_NAME_LIGHT="Nezuko-Light.colors"
 KONSOLE_NAME="NezukoKamado.colorscheme"
 
 BREEZE_ICON_SRC="/usr/share/icons/breeze/scalable"
@@ -198,21 +200,6 @@ install_file_component() {
     chown "$(whoami)":"$(whoami)" "$dest"
 }
 
-recolor_svg() {
-    local svg=$1
-    local dest=$2
-
-    if command -v inkscape >/dev/null 2>&1; then
-        inkscape "$svg" --export-filename="$dest" --actions="select-all;object-set-fill:#ff66aa;export-do"
-    elif command -v xmlstarlet >/dev/null 2>&1; then
-        cp "$svg" "$dest"
-        xmlstarlet ed -L -u "//*[local-name()='path']/@fill" -v "#ff66aa" "$dest"
-    else
-        echo "⚠️  Neither Inkscape nor xmlstarlet found; copying without recolor"
-        cp "$svg" "$dest"
-    fi
-}
-
 # -------------------------
 # Prepare Nezuko icon pack
 # -------------------------
@@ -220,58 +207,21 @@ NEZUKO_ICON_SRC="icons/$ICON_NAME"
 NEZUKO_ICON_DEST="$ICON_DIR/$ICON_NAME"
 
 if [ -d "$NEZUKO_ICON_SRC" ]; then
-    echo "➡️ Copying base Nezuko icons..."
+    echo "➡️ Copying Nezuko-Icons (Papirus-based, pink, self-contained)..."
     rm -rf "$NEZUKO_ICON_DEST"
     cp -r "$NEZUKO_ICON_SRC" "$NEZUKO_ICON_DEST"
 else
-    echo "⚠️  Base Nezuko icons not found at $NEZUKO_ICON_SRC, skipping."
+    echo "⚠️  Nezuko-Icons not found at $NEZUKO_ICON_SRC, skipping."
 fi
 
 # -------------------------
-# Recolor Breeze icons into Nezuko pack
-# -------------------------
-if [ -d "$BREEZE_ICON_SRC" ] && [ -d "$NEZUKO_ICON_DEST" ]; then
-    echo "🎨 Copying and recoloring Breeze icons to pink (as $ICON_NAME)..."
-    mkdir -p "$NEZUKO_ICON_DEST/scalable"
-
-    find "$BREEZE_ICON_SRC" -name "*.svg" | while read -r breeze_svg; do
-        filename=$(basename "$breeze_svg")
-        dest_svg="$NEZUKO_ICON_DEST/scalable/$filename"
-
-        if [ ! -f "$dest_svg" ]; then
-            recolor_svg "$breeze_svg" "$dest_svg"
-            sed -i 's/fill:#[0-9a-fA-F]*/fill:#ff66aa/g' "$dest_svg"
-        fi
-    done
-    echo "✅ Breeze icons recolored and added to $ICON_NAME pack"
-else
-    echo "⚠️  Breeze icons not found at $BREEZE_ICON_SRC or Nezuko icon destination not ready, skipping."
-fi
-
-# -------------------------
-# Recolor existing Nezuko icons
-# -------------------------
-if [ -d "$NEZUKO_ICON_DEST/scalable" ]; then
-    echo "🎨 Ensuring all $ICON_NAME icons are pink..."
-    for svg in "$NEZUKO_ICON_DEST/scalable"/*.svg; do
-        [ -e "$svg" ] || continue
-        sed -i 's/fill:#[0-9a-fA-F]*/fill:#ff66aa/g' "$svg"
-    done
-    echo "✅ $ICON_NAME icons verified to be pink"
-else
-    echo "⚠️  $ICON_NAME icon directory $NEZUKO_ICON_DEST/scalable not found, skipping recolor."
-fi
-
-# -------------------------
-# Run PNG fallback conversion
+# PNG fallbacks (already generated in the pack)
 # -------------------------
 CONVERT_SCRIPT="$NEZUKO_ICON_DEST/convert_svgs.sh"
 if [ -f "$CONVERT_SCRIPT" ]; then
-    echo "🎨 Generating PNG fallbacks from SVGs..."
-    chmod +x "$CONVERT_SCRIPT"
-    (cd "$NEZUKO_ICON_DEST" && ./convert_svgs.sh)
+    echo "ℹ️  PNG fallbacks are pre-generated in the icon pack; nothing to regenerate."
 else
-    echo "⚠️ No convert_svgs.sh found at $CONVERT_SCRIPT, skipping PNG fallback generation."
+    echo "⚠️  No convert_svgs.sh found at $CONVERT_SCRIPT, skipping PNG fallback generation."
 fi
 
 # -------------------------
@@ -347,7 +297,7 @@ Fallback=org.kde.breeze.desktop
 EOL
 
 if [ ! -f "plasma/$PLASMA_NAME/metadata.desktop" ]; then
-    echo "➡️ Creating plasma theme metadata..."
+    echo "⚠️  plasma/$PLASMA_NAME/metadata.desktop missing; creating a default."
     cat > "plasma/$PLASMA_NAME/metadata.desktop" << 'EOL'
 [Desktop Entry]
 Name=Nezuko Kamado
@@ -364,28 +314,56 @@ X-KDE-PluginInfo-EnabledByDefault=true
 [Settings]
 dialogs=true
 widgets=true
+opaqueDialogs=true
+translucentDialogs=true
+EOL
+fi
+
+if [ ! -f "plasma/$PLASMA_NAME_LIGHT/metadata.desktop" ]; then
+    echo "⚠️  plasma/$PLASMA_NAME_LIGHT/metadata.desktop missing; creating a default."
+    cat > "plasma/$PLASMA_NAME_LIGHT/metadata.desktop" << 'EOL'
+[Desktop Entry]
+Name=Nezuko Kamado Light
+Comment=Nezuko-inspired light KDE Plasma theme with glassy dialogs, rounded corners, and shadows
+X-KDE-PluginInfo-Author=Peter Chege
+X-KDE-PluginInfo-Email=peterchegen12@gmail.com
+X-KDE-PluginInfo-Name=Nezuko-Light
+X-KDE-PluginInfo-Version=1.2
+X-KDE-PluginInfo-Website=https://github.com/peter-njoro/nezuko-plasma
+X-KDE-PluginInfo-Category=Plasma Theme
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-EnabledByDefault=false
+
+[Settings]
+dialogs=true
+widgets=true
+opaqueDialogs=true
+translucentDialogs=true
 EOL
 fi
 
 # -------------------------
-# Install theme components
+# Install theme components (dark + light plasma styles)
 # -------------------------
 install_theme_component "cursors/$CURSOR_NAME" "$CURSOR_DIR/$CURSOR_NAME" "cursors"
-install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style"
+install_theme_component "plasma/$PLASMA_NAME" "$PLASMA_DIR/$PLASMA_NAME" "plasma style (dark)"
+install_theme_component "plasma/$PLASMA_NAME_LIGHT" "$PLASMA_DIR/$PLASMA_NAME_LIGHT" "plasma style (light)"
 install_system_theme_component "look-and-feel/$LOOKFEEL_NAME" "$LOOKFEEL_DIR/$LOOKFEEL_NAME" "global theme"
 install_file_component "konsole/$KONSOLE_NAME" "$KONSOLE_DIR/$KONSOLE_NAME" "Konsole color scheme"
 
 # -------------------------
-# Color scheme
+# Color schemes (dark + light)
 # -------------------------
-COLOR_SRC="plasma/$PLASMA_NAME/colors/$COLOR_NAME"
-if [ -f "$COLOR_SRC" ]; then
-    echo "➡️ Installing color scheme..."
-    cp "$COLOR_SRC" "$COLOR_DIR/$COLOR_NAME"
-    chown "$(whoami)":"$(whoami)" "$COLOR_DIR/$COLOR_NAME"
-else
-    echo "⚠️ No Nezuko color scheme found in $COLOR_SRC, skipping."
-fi
+for COLOR_SRC in "plasma/$PLASMA_NAME/colors/$COLOR_NAME" "plasma/$PLASMA_NAME_LIGHT/colors/$COLOR_NAME_LIGHT"; do
+    COLOR_BASE="$(basename "$COLOR_SRC")"
+    if [ -f "$COLOR_SRC" ]; then
+        echo "➡️ Installing color scheme $COLOR_BASE..."
+        cp "$COLOR_SRC" "$COLOR_DIR/$COLOR_BASE"
+        chown "$(whoami)":"$(whoami)" "$COLOR_DIR/$COLOR_BASE"
+    else
+        echo "⚠️  Color scheme $COLOR_SRC not found, skipping."
+    fi
+done
 
 # -------------------------
 # Splash resources

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="48" viewBox="0 0 200 48">
+  <defs>
+    <filter id="panelBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <linearGradient id="panelGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFE4F0"/>
+    </linearGradient>
+  </defs>
+
+  <style id="current-color-scheme" type="text/css">
+    .ColorScheme-Text{color:#2E2A2A}
+    .ColorScheme-Highlight{color:#FFE4F0}
+    .ColorScheme-ViewBackground{color:#3A2A3A}
+    .ColorScheme-ViewText{color:#FFFFFF}
+    .ColorScheme-ButtonText{color:#2E2A2A}
+    .ColorScheme-ButtonBackground{color:#FFFFFF}
+    .ColorScheme-ButtonHover{color:#FFE4F0}
+    .ColorScheme-ViewHover{color:#FFE4F0}
+    .ColorScheme-ViewFocus{color:#FFE4F0}
+    .ColorScheme-Background{color:#2E2A2A}
+  </style>
+
+  <rect x="4" y="4" width="192" height="40" rx="15" ry="15"
+        fill="url(#panelGradient)" filter="url(#panelBlur)"
+        stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+</svg>
