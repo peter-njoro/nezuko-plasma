@@ -1,5 +1,5 @@
 [General]
-ColorScheme=Breeze
+ColorScheme=Nezuko Kamado
 Name=Nezuko
 
 [Icons]
@@ -9,7 +9,7 @@ Theme=Nezuko-Icons
 Theme=Nezuko-Cursors
 
 [PlasmaTheme]
-Name=Nezuko-Plasma
+Name=Nezuko
 
 [WM]
 activeBackground=50,50,50
