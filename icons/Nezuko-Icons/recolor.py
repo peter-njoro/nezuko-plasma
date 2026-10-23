@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+"""Recolor Papirus SVGs to the Nezuko pink palette.
+
+Two input layers from Papirus:
+  - symbolic: uses fill:currentColor + ColorScheme-* CSS classes (theming-intended)
+  - color:    hardcoded brand fills
+
+This script produces pink variants suitable for the Nezuko-Icons theme.
+"""
+import re
+import sys
+import argparse
+from pathlib import Path
+
+# ---------------------------------------------------------------------------
+# Nezuko pink palette
+# ---------------------------------------------------------------------------
+PINK = {
+    "primary":    "#FF69B4",   # hot pink anchor
+    "light":      "#FFB6D2",
+    "lighter":    "#FFD6E6",
+    "pale":       "#FFC0CB",
+    "deep":       "#E0529A",
+    "deep2":      "#B83A78",
+    "bg_light":   "#F5E6F0",
+    "bg_dark":    "#2E2A2A",
+    "accent":     "#4CAF50",   # bamboo green
+    "negative":   "#FF4081",
+    "neutral":    "#FFA7D7",
+    "white":      "#FFFFFF",
+    "black":      "#2E2A2A",
+}
+
+# CSS role -> target color (used for symbolic layer)
+ROLE_MAP = {
+    "Text":            PINK["black"],
+    "Highlight":       PINK["primary"],
+    "NeutralText":     PINK["neutral"],
+    "PositiveText":    PINK["accent"],
+    "NegativeText":    PINK["negative"],
+}
+
+# Neutral colors that Papirus uses for fills -> map to pink family
+NEUTRAL_MAP = {
+    "#ffffff":  PINK["lighter"],
+    "#FFFFFF":  PINK["lighter"],
+    "#fafafa":  PINK["pale"],
+    "#eaeaea":  PINK["pale"],
+    "#e4e4e4":  PINK["light"],
+    "#c2c2c2":  PINK["light"],
+    "#cccccc":  PINK["light"],
+    "#8e8e8e":  PINK["deep"],
+    "#676767":  PINK["deep2"],
+    "#4f4f4f":  PINK["deep2"],
+    "#3f3f3f":  PINK["deep2"],
+    "#323232":  PINK["deep2"],
+    "#727272":  PINK["deep2"],
+    "#1d344f":  PINK["bg_dark"],
+    "#000000":  PINK["bg_dark"],
+}
+
+# Brand colors we keep as-is (don't recolor) in the apps context
+KEEP_BRAND = True
+
+WARM_BRAND = {"#ffba36", "#f9bd30", "#ffde3f", "#ffcc19", "#ffa507",
+              "#ffb300", "#ff9800", "#ffce41", "#ffeb3b"}
+RED_BRAND = {"#e25252", "#bf4b4b", "#ec407a", "#f06292", "#eb6637"}
+
+
+def recolor_symbolic(text: str) -> str:
+    """Recolor a symbolic SVG: rewrite the CSS style block and currentColor fills."""
+    # 1. Replace the ColorScheme-* CSS definitions with our palette
+    def css_sub(m):
+        inner = m.group(1)
+        for role, color in ROLE_MAP.items():
+            inner = re.sub(
+                r"\.ColorScheme-" + role + r"\s*\{[^}]*\}",
+                ".ColorScheme-" + role + "{color:" + color + ";}",
+                inner,
+            )
+        return "<style id=\"current-color-scheme\" type=\"text/css\">" + inner + "</style>"
+
+    text = re.sub(
+        r"<style id=\"current-color-scheme\" type=\"text/css\">(.*?)</style>",
+        css_sub, text, flags=re.DOTALL)
+
+    # 2. Replace fill:currentColor -> primary pink. Qt's QSvgRenderer honors the
+    #    CSS class color only when currentColor is actually used as the fill;
+    #    to guarantee a pink result we set the fill explicitly. The CSS classes
+    #    are still rewritten (above) so any stroke:currentColor uses the role.
+    text = re.sub(r"fill:currentColor", "fill:" + PINK["primary"], text)
+
+    return text
+
+
+def recolor_color_layer(text: str, context: str = "apps") -> str:
+    """Recolor a color-layer SVG.
+
+    - apps: keep brand colors so logos stay recognizable; only neutral fills
+      (white/gray/black) are pinkified.
+    - everything else: Papirus uses a system palette of blues/teals/purples that
+      are NOT brands, so recolor all saturated colors to the pink palette.
+    """
+    def repl(m):
+        c = m.group(0)
+        hexpart = c[5:].lower()
+        if hexpart in NEUTRAL_MAP:
+            return "fill:" + NEUTRAL_MAP[hexpart]
+        if context == "apps":
+            return c
+        if hexpart in WARM_BRAND:
+            return "fill:" + PINK["primary"]
+        if hexpart in RED_BRAND:
+            return "fill:" + PINK["deep"]
+        r = int(hexpart[1:3], 16)
+        g = int(hexpart[3:5], 16)
+        b = int(hexpart[5:7], 16)
+        mx, mn = max(r, g, b), min(r, g, b)
+        if mx - mn > 40 and mx > 60:
+            return "fill:" + PINK["primary"]
+        if mx < 90:
+            return "fill:" + PINK["deep2"]
+        return c
+    return re.sub(r"fill:#[0-9a-fA-F]{6}", repl, text)
+
+
+def process(src: Path, dst: Path, mode: str, context: str = "apps") -> None:
+    text = src.read_text(encoding="utf-8", errors="replace")
+    if mode == "symbolic":
+        out = recolor_symbolic(text)
+    else:
+        out = recolor_color_layer(text, context)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text(out, encoding="utf-8")
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--src", required=True)
+    ap.add_argument("--dst", required=True)
+    ap.add_argument("--mode", choices=["symbolic", "color"], default="color")
+    ap.add_argument("--context", default="apps")
+    args = ap.parse_args()
+    process(Path(args.src), Path(args.dst), args.mode, args.context)
+
+
+if __name__ == "__main__":
+    main()

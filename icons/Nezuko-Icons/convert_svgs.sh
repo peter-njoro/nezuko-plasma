@@ -1,20 +1,13 @@
 #!/bin/bash
-
 # convert_svgs.sh
-# Generate PNG fallbacks from SVG icons
-# Prefers rsvg-convert, falls back to Inkscape
-# Maintains freedesktop-style subfolder structure
-
+# Generate PNG fallbacks from SVG icons in the Nezuko-Icons theme.
+# Prefers rsvg-convert, falls back to Inkscape. Runs in parallel.
 set -euo pipefail
 
-# Sizes to export
-SIZES=(16 32 48 64 128)
-
-# Output base directory
 OUTDIR="."
-mkdir -p "$OUTDIR"
+JOBS="${JOBS:-$(nproc 2>/dev/null || echo 4)}"
+SIZES=(16 22 24 32 48 64 96 128 256)
 
-# Choose converter
 if command -v rsvg-convert &> /dev/null; then
     CONVERTER="rsvg-convert"
     echo "🎨 Using rsvg-convert for SVG → PNG conversion"
@@ -26,31 +19,31 @@ else
     exit 1
 fi
 
-echo "🎨 Converting SVGs to PNG fallbacks..."
+echo "🎨 Converting SVGs to PNG fallbacks (parallel=$JOBS)..."
 
-# Find all SVGs in scalable directories
-find scalable -type f -name "*.svg" | while read -r svg; do
-    # Example: scalable/apps/firefox.svg
-    relpath="${svg#scalable/}"       # → apps/firefox.svg
-    subdir="$(dirname "$relpath")"   # → apps
-    name="$(basename "${relpath%.svg}")" # → firefox
+# Worker script written to a temp file so xargs can invoke it in parallel subshells.
+WORKER="$(mktemp)"
+cat > "$WORKER" << 'WORKER_EOF'
+#!/bin/bash
+# args: svg size converter
+svg="$1"; sz="$2"; converter="$3"
+name="$(basename "${svg%.svg}")"
+outdir="$(dirname "$svg")"
+if [ "$converter" = "rsvg-convert" ]; then
+    rsvg-convert -w "$sz" -h "$sz" "$svg" -o "$outdir/$name.png"
+else
+    inkscape "$svg" --export-type=png --export-filename="$outdir/$name.png" \
+               --export-width="$sz" --export-height="$sz" >/dev/null 2>&1
+fi
+WORKER_EOF
+chmod +x "$WORKER"
 
-    for size in "${SIZES[@]}"; do
-        # Build output directory based on index.theme structure
-        outdir="$OUTDIR/${size}x${size}/$subdir"
-        mkdir -p "$outdir"
-
-        outfile="$outdir/$name.png"
-
-        echo "➡️ $relpath → $outfile (${size}x${size})"
-
-        if [[ "$CONVERTER" == "rsvg-convert" ]]; then
-            rsvg-convert -w $size -h $size "$svg" -o "$outfile"
-        else
-            inkscape "$svg" --export-type=png --export-filename="$outfile" \
-                    --export-width=$size --export-height=$size
-        fi
-    done
+for sz in "${SIZES[@]}"; do
+    szdir="${sz}x${sz}"
+    [ -d "$szdir" ] || continue
+    echo "  → size $sz"
+    find "$szdir" -name "*.svg" -print0 | xargs -0 -P "$JOBS" -I {} "$WORKER" {} "$sz" "$CONVERTER"
 done
 
+rm -f "$WORKER"
 echo "✅ All fallbacks generated"
