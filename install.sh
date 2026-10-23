@@ -165,7 +165,7 @@ install_theme_component() {
     echo "➡️ Installing $name..."
     rm -rf "$dest"
     cp -r "$src" "$dest"
-    chown -R "$(whoami)":"$(whoami)" "$dest"
+    chown -R "$(id -un):$(id -gn)" "$dest"
 }
 
 install_system_theme_component() {
@@ -197,7 +197,7 @@ install_file_component() {
     mkdir -p "$(dirname "$dest")"
     echo "➡️ Installing $name..."
     cp "$src" "$dest"
-    chown "$(whoami)":"$(whoami)" "$dest"
+    chown "$(id -un):$(id -gn)" "$dest"
 }
 
 # -------------------------
@@ -359,7 +359,7 @@ for COLOR_SRC in "plasma/$PLASMA_NAME/colors/$COLOR_NAME" "plasma/$PLASMA_NAME_L
     if [ -f "$COLOR_SRC" ]; then
         echo "➡️ Installing color scheme $COLOR_BASE..."
         cp "$COLOR_SRC" "$COLOR_DIR/$COLOR_BASE"
-        chown "$(whoami)":"$(whoami)" "$COLOR_DIR/$COLOR_BASE"
+        chown "$(id -un):$(id -gn)" "$COLOR_DIR/$COLOR_BASE"
     else
         echo "⚠️  Color scheme $COLOR_SRC not found, skipping."
     fi
@@ -458,11 +458,11 @@ if [ -d "$SPLASH_SRC_DIR" ]; then
     if [ -f "nezuko-splash" ]; then
         cp nezuko-splash "$SPLASH_EXEC"
         chmod +x "$SPLASH_EXEC"
-        chown "$(whoami)":"$(whoami)" "$SPLASH_EXEC"
+        chown "$(id -un):$(id -gn)" "$SPLASH_EXEC"
 
         mkdir -p "$SPLASH_EXEC_DIR"
         cp -r "../splash-resources/"* "$SPLASH_EXEC_DIR/" 2>/dev/null || true
-        chown -R "$(whoami)":"$(whoami)" "$SPLASH_EXEC_DIR"
+        chown -R "$(id -un):$(id -gn)" "$SPLASH_EXEC_DIR"
 
         echo "✅ Standalone splash installed at $SPLASH_EXEC"
     else

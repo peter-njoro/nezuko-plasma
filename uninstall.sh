@@ -38,7 +38,7 @@ fix_ownership() {
     local path=$1
     if [ -e "$path" ]; then
         echo "⚠️  Fixing ownership for $path"
-        sudo chown -R "$(whoami)":"$(whoami)" "$path"
+        sudo chown -R "$(id -un):$(id -gn)" "$path"
     fi
 }
 
