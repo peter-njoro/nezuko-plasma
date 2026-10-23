@@ -1,28 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="48" viewBox="0 0 200 48">
   <defs>
-    <filter id="panelBlur" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
-    </filter>
     <linearGradient id="panelGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="0%" stop-color="#FFF5FA"/>
       <stop offset="100%" stop-color="#FFE4F0"/>
     </linearGradient>
   </defs>
 
   <style id="current-color-scheme" type="text/css">
     .ColorScheme-Text{color:#2E2A2A}
-    .ColorScheme-Highlight{color:#FFE4F0}
-    .ColorScheme-ViewBackground{color:#3A2A3A}
-    .ColorScheme-ViewText{color:#FFFFFF}
+    .ColorScheme-Highlight{color:#FF69B4}
+    .ColorScheme-ViewBackground{color:#FFFFFF}
+    .ColorScheme-ViewText{color:#2E2A2A}
     .ColorScheme-ButtonText{color:#2E2A2A}
-    .ColorScheme-ButtonBackground{color:#FFFFFF}
-    .ColorScheme-ButtonHover{color:#FFE4F0}
-    .ColorScheme-ViewHover{color:#FFE4F0}
-    .ColorScheme-ViewFocus{color:#FFE4F0}
-    .ColorScheme-Background{color:#2E2A2A}
+    .ColorScheme-ButtonBackground{color:#FFD6E6}
+    .ColorScheme-ButtonHover{color:#FF69B4}
+    .ColorScheme-ViewHover{color:#FF69B4}
+    .ColorScheme-ViewFocus{color:#FF69B4}
+    .ColorScheme-Background{color:#FFFFFF}
   </style>
 
-  <rect x="4" y="4" width="192" height="40" rx="15" ry="15"
-        fill="url(#panelGradient)" filter="url(#panelBlur)"
-        stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <!-- Solid panel with slight edge curve and outline, Breeze-like -->
+  <rect x="0" y="0" width="200" height="48" rx="10" ry="10"
+        fill="url(#panelGradient)"
+        stroke="#E0E0E0" stroke-width="1.5"/>
 </svg>

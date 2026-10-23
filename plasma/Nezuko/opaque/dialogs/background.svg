@@ -6,8 +6,8 @@
     </linearGradient>
   </defs>
 
-  <!-- Opaque dialog background -->
-  <rect x="8" y="8" width="240" height="240" rx="20" ry="20"
+  <!-- Opaque dialog background with small edge curve and outline -->
+  <rect x="0" y="0" width="256" height="256" rx="20" ry="20"
         fill="url(#opaqueGradient)"
         stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
 </svg>
