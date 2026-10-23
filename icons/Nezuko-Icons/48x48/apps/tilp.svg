@@ -4,14 +4,14 @@
  <path style="opacity:0.2" d="m 16.513672,19.045 -1,1.732422 2.599609,1.5 1,-1.732422 z m 4.330078,2.5 -1,1.732422 2.599609,1.5 1,-1.732422 z m -6.330078,0.964844 -1,1.732422 2.599609,1.5 1,-1.732422 z m 10.662109,1.535156 -1,1.732422 2.597657,1.5 1,-1.732422 z m -6.332031,0.964844 -1,1.732422 2.599609,1.5 1,-1.732422 z m -6.330078,0.964843 -1,1.730469 2.599609,1.5 1,-1.730469 z m 16.992187,0.570313 -1,1.732422 2.597657,1.5 1,-1.732422 z m -6.330078,0.964844 -1,1.732422 2.597657,1.5 1,-1.732422 z m -6.332031,0.964843 -1,1.730469 2.599609,1.5 1,-1.730469 z M 10.513672,29.437578 9.5136719,31.17 l 2.5996091,1.5 1,-1.732422 z m 16.992187,0.572266 -1,1.732422 2.597657,1.5 1,-1.732422 z m -6.330078,0.964843 -1,1.730469 2.597657,1.5 1,-1.730469 z m -6.332031,0.962891 -1,1.732422 2.599609,1.5 1,-1.732422 z m 10.662109,1.537109 -1,1.730469 2.597657,1.5 1,-1.730469 z m -6.330078,0.962891 -1,1.732422 2.597657,1.5 1,-1.732422 z m 4.330078,2.5 -1,1.732422 2.597657,1.5 1,-1.732422 z"/>
  <path style="opacity:0.2" d="m 23.690804,7.0189918 -9.75e-4,0.00169 c -0.120007,0.051859 -0.371927,0.2382524 -0.556056,0.5607733 l -5.569896,9.7606229 15.722082,9.077149 5.506156,-9.646316 c 0.184133,-0.322527 0.221391,-0.64596 0.204112,-0.791032 -0.0029,-0.02418 0.0016,-0.009 3.02e-4,-0.02012 z"/>
  <path style="fill:#d7dcd7" d="m 23.690804,6.0189965 -9.75e-4,0.00169 c -0.120007,0.051859 -0.371927,0.2382524 -0.556056,0.5607733 l -5.569896,9.7606225 15.722082,9.077149 5.506156,-9.646316 c 0.184133,-0.322527 0.221391,-0.64596 0.204112,-0.791032 -0.0029,-0.02418 0.0016,-0.009 3.02e-4,-0.02012 z"/>
- <rect style="fill:#6771f2" width="3" height="2" x="23.32" y="7.37" transform="rotate(30)"/>
- <rect style="fill:#6771f2" width="3" height="2" x="28.32" y="7.37" transform="rotate(30)"/>
- <rect style="fill:#6771f2" width="3" height="2" x="33.33" y="7.37" transform="rotate(30)"/>
- <rect style="fill:#6771f2" width="3" height="2" x="38.33" y="7.37" transform="rotate(30)"/>
- <rect style="fill:#ffb845" width="3" height="2" x="23.32" y="11.37" transform="rotate(30)"/>
- <rect style="fill:#ff45ea" width="3" height="2" x="28.32" y="11.37" transform="rotate(30)"/>
- <rect style="fill:#6771f2" width="3" height="2" x="33.33" y="11.37" transform="rotate(30)"/>
- <rect style="fill:#6771f2" width="3" height="2" x="38.33" y="11.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="23.32" y="7.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="28.32" y="7.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="33.33" y="7.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="38.33" y="7.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="23.32" y="11.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="28.32" y="11.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="33.33" y="11.37" transform="rotate(30)"/>
+ <rect style="fill:#FF69B4" width="3" height="2" x="38.33" y="11.37" transform="rotate(30)"/>
  <rect style="opacity:0.4;fill:#FFD6E6" width="3" height="2" x="23.32" y="15.37" transform="rotate(30)"/>
  <rect style="opacity:0.4;fill:#FFD6E6" width="3" height="2" x="28.32" y="15.37" transform="rotate(30)"/>
  <rect style="opacity:0.4;fill:#FFD6E6" width="3" height="2" x="33.33" y="15.37" transform="rotate(30)"/>

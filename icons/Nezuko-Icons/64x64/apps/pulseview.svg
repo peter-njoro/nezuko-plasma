@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1.1">
- <rect style="fill:#45c034" width="5" height="52" x="35" y="5"/>
- <rect style="fill:#e7d324" width="5" height="52" x="30" y="5"/>
- <rect style="fill:#c033e3" width="5" height="52" x="45" y="5"/>
- <rect style="fill:#3266b4" width="5" height="52" x="40" y="5"/>
- <rect style="fill:#8b5a3a" width="5" height="52" x="15" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="35" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="30" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="45" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="40" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="15" y="5"/>
  <rect style="fill:#B83A78" width="5" height="52" x="10" y="5"/>
- <rect style="fill:#ff7d27" width="5" height="52" x="25" y="5"/>
- <rect style="fill:#f24040" width="5" height="52" x="20" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="25" y="5"/>
+ <rect style="fill:#FF69B4" width="5" height="52" x="20" y="5"/>
  <rect style="fill:#80809d" width="5" height="52" x="50" y="5"/>
  <rect style="opacity:0.2" width="55" height="22" x="5" y="37" rx="3.75" ry="4.125"/>
  <rect style="fill:#9e9c89" width="55" height="22" x="5" y="36" rx="3.75" ry="4.125"/>

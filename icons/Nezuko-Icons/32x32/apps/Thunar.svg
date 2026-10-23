@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1">
- <rect style="fill:#5895dc" width="16" height="17" x="8" y="1" rx="1.275" ry="1.275"/>
- <rect style="fill:#89e058" width="20" height="17" x="6" y="4" rx="1.275" ry="1.275"/>
- <rect style="fill:#ffcd54" width="24" height="17" x="4" y="7" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="16" height="17" x="8" y="1" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="20" height="17" x="6" y="4" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="24" height="17" x="4" y="7" rx="1.275" ry="1.275"/>
  <rect opacity=".2" width="28" height="20" x="2" y="11" rx="1.5" ry="1.5"/>
  <rect fill="#8e8e8e" width="28" height="20" x="2" y="10" rx="1.5" ry="1.5"/>
  <rect opacity=".2" width="10" height="3" x="11" y="19" rx="1" ry="1"/>

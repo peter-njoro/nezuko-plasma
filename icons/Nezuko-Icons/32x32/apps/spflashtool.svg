@@ -2,7 +2,7 @@
  <path style="opacity:0.2" d="m 5.0000005,25 v 4.55 c 0,0.8033 0.6541333,1.45 1.4666666,1.45 H 25.533333 C 26.345866,31 27,30.3533 27,29.55 V 25 Z"/>
  <path style="fill:#FFB6D2" d="m 6.4666671,0.9999996 c -0.8125333,0 -1.4666666,0.6467 -1.4666666,1.45 V 24 H 27 V 2.4499996 c 0,-0.8033 -0.654134,-1.45 -1.466667,-1.45 z"/>
  <path style="fill:#B83A78" d="m 5.0000005,24 v 4.55 c 0,0.8033 0.6541333,1.45 1.4666666,1.45 H 25.533333 C 26.345866,30 27,29.3533 27,28.55 V 24 Z"/>
- <path style="fill:#73ac05" d="M 7,6 V 8 H 9 V 6 Z m 2,2 v 2 h 2 V 8 Z m 2,2 v 2 H 9 v 2 H 7 v 3 h 9 9 v -3 h -2 v -2 h -2 v -2 h -5 z m 10,0 h 2 V 8 h -2 z m 2,-2 h 2 V 6 H 23 Z M 7,19 v 5 h 9 9 v -5 h -9 z"/>
+ <path style="fill:#FF69B4" d="M 7,6 V 8 H 9 V 6 Z m 2,2 v 2 h 2 V 8 Z m 2,2 v 2 H 9 v 2 H 7 v 3 h 9 9 v -3 h -2 v -2 h -2 v -2 h -5 z m 10,0 h 2 V 8 h -2 z m 2,-2 h 2 V 6 H 23 Z M 7,19 v 5 h 9 9 v -5 h -9 z"/>
  <rect style="opacity:0.2" width="2" height="2" x="11" y="15"/>
  <rect style="fill:#FFD6E6" width="2" height="2" x="11" y="14"/>
  <rect style="opacity:0.2" width="2" height="2" x="19" y="15"/>

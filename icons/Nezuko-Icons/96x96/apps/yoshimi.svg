@@ -6,11 +6,11 @@
  <path d="m38 7.0001633-6 5.9999577" style="fill:none;stroke-linecap:round;stroke-width:3.9999857;stroke:#434343"/>
  <path d="m37.960938 4.9806464a2.0002 2.0001858 0 0 0-1.375 0.6054645l-6 5.9999571a2.0002 2.0001858 0 0 0-0.550782 1.937487 2.0002 2.0001858 0 0 1 0.550782-0.937494l6-5.9999572a2.0002 2.0001858 0 0 1 1.375-0.6054645 2.0002 2.0001858 0 0 1 1.992186 1.496083 2.0002 2.0001858 0 0 0-1.992186-2.4960759z" style="fill:#FFD6E6;opacity:.1"/>
  <rect x="6" y="10.000142" width="36" height="33.99976" ry="1.9999858" style="opacity:.2"/>
- <rect x="6" y="9.0001488" width="36" height="33.99976" ry="1.9999858" style="fill:#ff57a3"/>
+ <rect x="6" y="9.0001488" width="36" height="33.99976" ry="1.9999858" style="fill:#FF69B4"/>
  <ellipse cx="16" cy="22.000057" rx="6" ry="5.9999576" style="opacity:.1"/>
- <ellipse cx="16" cy="21.000065" rx="6" ry="5.9999576" style="fill:#fb3705"/>
+ <ellipse cx="16" cy="21.000065" rx="6" ry="5.9999576" style="fill:#FF69B4"/>
  <ellipse cx="32" cy="22.000057" rx="6" ry="5.9999576" style="opacity:.1"/>
- <ellipse cx="32" cy="21.000065" rx="6" ry="5.9999576" style="fill:#fb3705"/>
+ <ellipse cx="32" cy="21.000065" rx="6" ry="5.9999576" style="fill:#FF69B4"/>
  <rect x="12" y="30" width="24" height="11.999915" style="opacity:.1"/>
  <ellipse cx="16" cy="21.000065" rx="2" ry="1.9999858" style="fill:#B83A78"/>
  <ellipse cx="32" cy="21.000065" rx="2" ry="1.9999858" style="fill:#B83A78"/>

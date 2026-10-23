@@ -6,11 +6,11 @@
   <path d="m6 17.5 2 4 3-3 3 3 2-4v-1h-10z" style="opacity:.2"/>
   <path d="m6 17 2 4 3-3 3 3 2-4v-1h-10z" style="fill:#FFB6D2"/>
   <path d="m5 1.5v16s2 1 6 1 6-1 6-1v-16l-4 5h-4z" style="opacity:.1"/>
-  <path d="m5 1v16s2 1 6 1 6-1 6-1v-16l-4 5h-4z" style="fill:#9966ff"/>
+  <path d="m5 1v16s2 1 6 1 6-1 6-1v-16l-4 5h-4z" style="fill:#FF69B4"/>
   <circle cx="8.5" cy="14" r="2.5" style="opacity:.2"/>
-  <circle cx="8.5" cy="13.5" r="2.5" style="fill:#15b7ff"/>
+  <circle cx="8.5" cy="13.5" r="2.5" style="fill:#FF69B4"/>
   <circle cx="13.5" cy="14" r="2.5" style="opacity:.2"/>
-  <circle cx="13.5" cy="13.5" r="2.5" style="fill:#15b7ff"/>
+  <circle cx="13.5" cy="13.5" r="2.5" style="fill:#FF69B4"/>
   <path d="M 8.5,11 A 2.5,2.5 0 0 0 6,13.5 2.5,2.5 0 0 0 6.0136719,13.738281 2.5,2.5 0 0 1 8.5,11.5 2.5,2.5 0 0 1 10.986328,13.761719 2.5,2.5 0 0 0 11,13.5 2.5,2.5 0 0 0 8.5,11 Z" style="fill:#FFD6E6;opacity:.2"/>
   <path d="M 13.5,11 A 2.5,2.5 0 0 0 11,13.5 2.5,2.5 0 0 0 11.013672,13.738281 2.5,2.5 0 0 1 13.5,11.5 2.5,2.5 0 0 1 15.986328,13.761719 2.5,2.5 0 0 0 16,13.5 2.5,2.5 0 0 0 13.5,11 Z" style="fill:#FFD6E6;opacity:.2"/>
   <path d="m5 1v0.5l4 5h4l4-5v-0.5l-4 5h-4z" style="fill:#FFD6E6;opacity:.2"/>

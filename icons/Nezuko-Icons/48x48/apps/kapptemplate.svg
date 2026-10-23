@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" version="1">
- <path style="fill:#ff9800" d="m40 42v-36c0-1.108-0.892-2-2-2h-28c-1.108 0-2 0.892-2 2v36c0 1.108 0.892 2 2 2h28c1.108 0 2-0.892 2-2z"/>
- <rect style="fill:#ffce29" width="8" height="8" x="16" y="4"/>
- <path style="fill:#ffce29" d="M 32 4 L 32 12 L 40 12 L 40 6 C 40 4.892 39.108 4 38 4 L 32 4 z"/>
+ <path style="fill:#FF69B4" d="m40 42v-36c0-1.108-0.892-2-2-2h-28c-1.108 0-2 0.892-2 2v36c0 1.108 0.892 2 2 2h28c1.108 0 2-0.892 2-2z"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="16" y="4"/>
+ <path style="fill:#FF69B4" d="M 32 4 L 32 12 L 40 12 L 40 6 C 40 4.892 39.108 4 38 4 L 32 4 z"/>
  <path fill="#fff" opacity=".2" d="m10 4c-1.108 0-2 0.892-2 2v1c0-1.108 0.892-2 2-2h28c1.108 0 2 0.892 2 2v-1c0-1.108-0.892-2-2-2z"/>
  <path opacity=".2" d="m8 42v1c0 1.108 0.892 2 2 2h28c1.108 0 2-0.892 2-2v-1c0 1.108-0.892 2-2 2h-28c-1.108 0-2-0.892-2-2z"/>
- <rect style="fill:#ffce29" width="8" height="8" x="8" y="12"/>
- <rect style="fill:#ffce29" width="8" height="8" x="24" y="12"/>
- <rect style="fill:#ffce29" width="8" height="8" x="16" y="20"/>
- <rect style="fill:#ffce29" width="8" height="8" x="32" y="20"/>
- <rect style="fill:#ffce29" width="8" height="8" x="8" y="28"/>
- <rect style="fill:#ffce29" width="8" height="8" x="24" y="28"/>
- <rect style="fill:#ffce29" width="8" height="8" x="16" y="36"/>
- <path style="fill:#ffce29" d="M 32 36 L 32 44 L 38 44 C 39.108 44 40 43.108 40 42 L 40 36 L 32 36 z"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="8" y="12"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="24" y="12"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="16" y="20"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="32" y="20"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="8" y="28"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="24" y="28"/>
+ <rect style="fill:#FF69B4" width="8" height="8" x="16" y="36"/>
+ <path style="fill:#FF69B4" d="M 32 36 L 32 44 L 38 44 C 39.108 44 40 43.108 40 42 L 40 36 L 32 36 z"/>
  <rect style="opacity:0.2" width="8" height="1" x="16" y="12"/>
  <rect style="opacity:0.2" width="8" height="1" x="32" y="12"/>
  <rect style="opacity:0.2" width="8" height="1" x="8" y="20"/>

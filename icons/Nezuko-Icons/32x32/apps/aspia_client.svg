@@ -2,10 +2,10 @@
  <rect style="opacity:0.2" width="21" height="17" x="9" y="5" rx="2.1"/>
  <rect style="fill:#d2d2d2" width="21" height="17" x="9" y="4" rx="2.1"/>
  <rect style="opacity:0.2;fill:#FFD6E6" width="17" height="1" x="11" y="19"/>
- <rect style="fill:#4878ff" width="17" height="13" x="11" y="6"/>
+ <rect style="fill:#FF69B4" width="17" height="13" x="11" y="6"/>
  <rect style="opacity:0.2" width="21" height="17" x="2" y="11" rx="2.1"/>
  <rect style="fill:#FFB6D2" width="21" height="17" x="2" y="10" rx="2.1"/>
- <rect style="fill:#3bb2ff" width="17" height="13" x="4" y="12"/>
+ <rect style="fill:#FF69B4" width="17" height="13" x="4" y="12"/>
  <path style="opacity:0.2" d="m 6,14.7 v 0.634766 L 8.25,16.789844 6,18.065234 V 18.7 l 3,-1.681641 v -0.408203 z m 3,3.333984 V 18.7 h 3 v -0.666016 z"/>
  <path style="fill:#FFD6E6" d="M 9,17.333334 V 18 h 3 v -0.666666 z"/>
  <path style="fill:#FFD6E6" d="m 6,14 v 0.634114 L 8.25,16.089844 6,17.365886 V 18 l 3,-1.682293 v -0.407551 z"/>

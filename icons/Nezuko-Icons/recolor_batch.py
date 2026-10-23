@@ -51,29 +51,25 @@ def recolor_symbolic(text):
 def recolor_color_layer(text, context="apps"):
     """Recolor a color-layer SVG.
 
-    - apps: keep brand colors (Firefox blue, Chrome red, etc.) so logos stay
-      recognizable; only neutral fills (white/gray/black) are pinkified.
-    - everything else (places/devices/mimetypes/status/actions): Papirus uses a
-      system palette of blues/teals/purples that are NOT brands, so recolor all
-      saturated colors to the pink palette.
+    ALL contexts (including apps) are recolored to the pink palette:
+    - neutral fills (white/gray/black) -> pink family
+    - saturated colors -> primary pink
+    - near-black -> dark pink
+    Brand logos (Firefox, Chrome, etc.) are pinked too, per the theme design.
     """
     def repl(m):
         c = m.group(0)
         hexpart = c[5:].lower()
         if hexpart in NEUTRAL_MAP:
             return "fill:" + NEUTRAL_MAP[hexpart]
-        if context == "apps":
-            return c  # keep brand colors
-        # non-app contexts: recolor everything to pink family
         if hexpart in WARM_BRAND:
             return "fill:" + PINK["primary"]
         if hexpart in RED_BRAND:
             return "fill:" + PINK["deep"]
-        # blue/teal/purple system palette -> pink
+        # any other saturated non-neutral color -> pink
         r = int(hexpart[1:3], 16)
         g = int(hexpart[3:5], 16)
         b = int(hexpart[5:7], 16)
-        # saturated non-neutral color -> pink
         mx, mn = max(r, g, b), min(r, g, b)
         if mx - mn > 40 and mx > 60:
             return "fill:" + PINK["primary"]

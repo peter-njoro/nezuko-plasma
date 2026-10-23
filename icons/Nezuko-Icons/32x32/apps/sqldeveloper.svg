@@ -10,7 +10,7 @@
   <circle cx="21" cy="23" r="8"/>
  </g>
  <g transform="translate(3,0)">
-  <circle style="fill:#44ad4d" cx="21" cy="23" r="8"/>
+  <circle style="fill:#FF69B4" cx="21" cy="23" r="8"/>
  </g>
  <path style="fill:#FFD6E6" transform="matrix(0.5051815,0,0,0.5,-0.12205396,0.1146641)" d="m 57.646715,45.770672 -6.928203,4 -6.928203,4 0,-8 0,-8 6.928203,4 z"/>
 </svg>

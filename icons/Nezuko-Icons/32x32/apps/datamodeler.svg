@@ -7,7 +7,7 @@
  <path style="fill:#d1dbe0" d="M 16,2 A 14,7 0 0 0 1.9999999,9 14,7 0 0 0 16,16 14,7 0 0 0 30,9 14,7 0 0 0 16,2 Z"/>
  <path style="fill:#FFD6E6;opacity:0.2" d="M 16 2 A 14 7 0 0 0 2 9 A 14 7 0 0 0 2.046875 9.4589844 A 14 7 0 0 1 16 3 A 14 7 0 0 1 29.953125 9.5410156 A 14 7 0 0 0 30 9 A 14 7 0 0 0 16 2 z"/>
  <rect style="opacity:0.2" width="16" height="16" x="16" y="16" rx="1.455" ry="1.455"/>
- <rect style="fill:#44ad4d" width="16" height="16" x="16" y="15" rx="1.455" ry="1.455"/>
+ <rect style="fill:#FF69B4" width="16" height="16" x="16" y="15" rx="1.455" ry="1.455"/>
  <rect style="fill:#FFD6E6" width="5" height="4" x="18" y="18"/>
  <rect style="opacity:0.5;fill:#FFD6E6" width=".7" height="5.091" x="20" y="20.09"/>
  <rect style="opacity:0.5;fill:#FFD6E6" width=".7" height="5" x="19.3" y="-27" transform="rotate(90)"/>

@@ -1,6 +1,6 @@
 <svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
  <circle cx="32" cy="33" r="28" style="opacity:.2"/>
- <circle cx="32" cy="32" r="28" style="fill:#a71416"/>
+ <circle cx="32" cy="32" r="28" style="fill:#FF69B4"/>
  <path d="m32 26h12.3s2.7 2.6 2.7 7.5-2.7 6.5-2.7 6.5h-9.3v-7" style="fill:none;opacity:.2;stroke-linejoin:round;stroke-width:6;stroke:#000000"/>
  <path d="m32 25h12.3s2.7 2.6 2.7 7.5-2.7 6.5-2.7 6.5h-9.3v-7" style="fill:none;stroke-linejoin:round;stroke-width:6;stroke:#9e9e9e"/>
  <path d="m15 26h17l-14 14h17" style="fill:none;opacity:.2;stroke-linejoin:round;stroke-width:6;stroke:#000000"/>

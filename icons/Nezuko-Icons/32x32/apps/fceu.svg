@@ -5,9 +5,9 @@
  <path style="fill:#FFB6D2" d="m 2,16 h 28 v 4 H 2 Z"/>
  <rect style="opacity:0.4" width="3" height="1" x="6" y="23"/>
  <rect style="opacity:0.4" width="3" height="1" x="10" y="23"/>
- <rect style="fill:#f84c4b" width="7" height="1" x="8" y="18"/>
+ <rect style="fill:#FF69B4" width="7" height="1" x="8" y="18"/>
  <rect style="opacity:0.2" width="28" height="1" x="2" y="20"/>
- <path style="fill:#3a3a3a" d="m 19.000001,14 v 2.2 4.2 5.6 H 24 V 20.4 16.2 14 Z"/>
+ <path style="fill:#B83A78" d="m 19.000001,14 v 2.2 4.2 5.6 H 24 V 20.4 16.2 14 Z"/>
  <rect style="opacity:0.4" width="3" height="1" x="22" y="-21" transform="rotate(90)"/>
  <rect style="opacity:0.4" width="3" height="1" x="22" y="-23" transform="rotate(90)"/>
  <rect style="opacity:0.3" width="5" height="1" x="19" y="12"/>
@@ -15,5 +15,5 @@
  <rect style="opacity:0.3" width="5" height="1" x="19" y="10"/>
  <rect style="opacity:0.3" width="5" height="1" x="19" y="8"/>
  <path style="fill:#FFD6E6;opacity:0.2" d="M 5.0527344 5 C 4.0871668 5 3.9140625 5.9785156 3.9140625 5.9785156 L 2 16 L 2.1914062 16 L 3.9140625 6.9785156 C 3.9140625 6.9785156 4.0871668 6 5.0527344 6 L 16 6 L 26.947266 6 C 27.912834 6 28.085938 6.9785156 28.085938 6.9785156 L 29.808594 16 L 30 16 L 28.085938 5.9785156 C 28.085938 5.9785156 27.912834 5 26.947266 5 L 16 5 L 5.0527344 5 z"/>
- <rect style="fill:#3a3a3a" width="5" height="2" x="19" y="5"/>
+ <rect style="fill:#B83A78" width="5" height="2" x="19" y="5"/>
 </svg>

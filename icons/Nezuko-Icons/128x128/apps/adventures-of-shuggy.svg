@@ -5,11 +5,11 @@
  <path d="m18 50 6 11 8-9 8 9 6-11v-3h-28z" style="opacity:.2"/>
  <path d="m18 49 6 11 8-9 8 9 6-11v-3h-28z" style="fill:#FFB6D2"/>
  <path d="m15 5v45s6 3 17 3 17-3 17-3v-45l-11 14h-12z" style="opacity:.1"/>
- <path d="m15 4v45s6 3 17 3 17-3 17-3v-45l-11 14h-12z" style="fill:#9966ff"/>
+ <path d="m15 4v45s6 3 17 3 17-3 17-3v-45l-11 14h-12z" style="fill:#FF69B4"/>
  <circle cx="25" cy="40" r="7" style="opacity:.2"/>
- <circle cx="25" cy="39" r="7" style="fill:#15b7ff"/>
+ <circle cx="25" cy="39" r="7" style="fill:#FF69B4"/>
  <circle cx="39" cy="40" r="7" style="opacity:.2"/>
- <circle cx="39" cy="39" r="7" style="fill:#15b7ff"/>
+ <circle cx="39" cy="39" r="7" style="fill:#FF69B4"/>
  <path d="m15 4v1l11 14h12l11-14v-1l-11 14h-12l-11-14z" style="fill:#FFD6E6;opacity:.2"/>
  <path d="M 25 32 A 7 7 0 0 0 18 39 A 7 7 0 0 0 18.023438 39.541016 A 7 7 0 0 1 25 33 A 7 7 0 0 1 31.976562 39.458984 A 7 7 0 0 0 32 39 A 7 7 0 0 0 25 32 z " style="fill:#FFD6E6;opacity:.2"/>
  <path d="M 39 32 A 7 7 0 0 0 32 39 A 7 7 0 0 0 32.023438 39.541016 A 7 7 0 0 1 39 33 A 7 7 0 0 1 45.976562 39.458984 A 7 7 0 0 0 46 39 A 7 7 0 0 0 39 32 z " style="fill:#FFD6E6;opacity:.2"/>

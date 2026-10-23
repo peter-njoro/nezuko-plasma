@@ -7,7 +7,7 @@
  <path d="M 10 2 L 8 6 L 8.3339844 6.3339844 L 10 3 L 22 3 L 23.666016 6.3339844 L 24 6 L 22 2 L 10 2 z M 9.6660156 8.6660156 L 9 10 L 9.3183594 10.363281 L 10 9 L 9.6660156 8.6660156 z M 22.333984 8.6660156 L 22 9 L 22.681641 10.363281 L 23 10 L 22.333984 8.6660156 z " style="fill:#FFD6E6;opacity:.1"/>
  <path d="m10 2h12l-6 16z" style="fill:#FFB6D2"/>
  <path d="m13 6 2 3-1 4v10l2 2 2-2v-10l-1-4 2-3z" style="opacity:.2"/>
- <path d="m13 5 2 3-1 4v10l2 2 2-2v-10l-1-4 2-3z" style="fill:#d32a2c"/>
+ <path d="m13 5 2 3-1 4v10l2 2 2-2v-10l-1-4 2-3z" style="fill:#FF69B4"/>
  <path d="m15 8h2l2-3h-6z" style="opacity:.2"/>
  <path d="m10 2.6445312 1 6 5-3 5 3 1-6z" style="opacity:.2"/>
  <path d="m10 2 1 6 5-3 5 3 1-6z" style="fill:#FFD6E6"/>

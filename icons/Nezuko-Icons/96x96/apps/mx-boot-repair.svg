@@ -7,11 +7,11 @@
  <circle cx="24" cy="21" r="11" style="opacity:.2"/>
  <circle cx="24" cy="20" r="11" style="fill:#FFB6D2"/>
  <rect x="10" y="41" width="16" height="2" rx="1" ry="2" style="fill:#FFD6E6;opacity:.2"/>
- <rect x="10" y="40" width="16" height="2" rx="1" ry="2" style="fill:#3b3a36"/>
+ <rect x="10" y="40" width="16" height="2" rx="1" ry="2" style="fill:#B83A78"/>
  <circle cx="37" cy="42" r="1" style="opacity:.2"/>
  <circle cx="37" cy="41" r="1" style="fill:#b7b7b7"/>
  <circle cx="33" cy="42" r="1" style="opacity:.2"/>
  <circle cx="33" cy="41" r="1" style="fill:#b7b7b7"/>
- <rect x="22" y="13" width="4" height="14" rx="2" ry="2" style="fill:#db4539"/>
- <rect transform="rotate(90)" x="18" y="-31" width="4" height="14" rx="2" ry="2" style="fill:#db4539"/>
+ <rect x="22" y="13" width="4" height="14" rx="2" ry="2" style="fill:#FF69B4"/>
+ <rect transform="rotate(90)" x="18" y="-31" width="4" height="14" rx="2" ry="2" style="fill:#FF69B4"/>
 </svg>

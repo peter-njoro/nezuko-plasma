@@ -9,10 +9,10 @@
  <rect style="fill:#FFD6E6" width="3" height="13" x="21" y="15" rx="1.125" ry="1.083"/>
  <rect style="fill:#FFD6E6" width="3" height="13" x="25" y="15" rx="1.125" ry="1.083"/>
  <rect style="fill:#B83A78" width="3" height="7" x="7" y="15" rx="1.125" ry="1.05"/>
- <rect style="fill:#17d4e4" width="6" height="10" x="9" y="3"/>
- <rect style="fill:#17d4e4" width="6" height="10" x="3" y="-17" transform="rotate(90)"/>
- <rect style="fill:#17d4e4" width="6" height="6" x="20" y="7"/>
- <rect style="fill:#17d4e4" width="6" height="2" x="20" y="3"/>
+ <rect style="fill:#FF69B4" width="6" height="10" x="9" y="3"/>
+ <rect style="fill:#FF69B4" width="6" height="10" x="3" y="-17" transform="rotate(90)"/>
+ <rect style="fill:#FF69B4" width="6" height="6" x="20" y="7"/>
+ <rect style="fill:#FF69B4" width="6" height="2" x="20" y="3"/>
  <rect style="fill:#B83A78" width="3" height="7" x="11" y="15" rx="1.125" ry="1.05"/>
  <rect style="fill:#B83A78" width="3" height="7" x="15" y="15" rx="1.125" ry="1.05"/>
  <rect style="fill:#B83A78" width="3" height="7" x="23" y="15" rx="1.125" ry="1.05"/>

@@ -3,7 +3,7 @@
  <rect x="4" y="4" width="56" height="56" ry="12.6" style="fill:#B83A78"/>
  <path d="m32 13-17 10v20l17 10 17-10v-20z" style="opacity:.2"/>
  <path d="m32.000001 52 17-10.000001-17-9.999999-17.000002 9.999999z" style="fill:#838383"/>
- <path d="m49.000001 41.999999v-19.999998l-17-10.000001v20z" style="fill:#545454"/>
+ <path d="m49.000001 41.999999v-19.999998l-17-10.000001v20z" style="fill:#B83A78"/>
  <path d="m32.000001 12-17.000002 10.000001v19.999998l17.000002-9.999999z" style="fill:#6d6d6d"/>
  <path d="m32 12-17 10v1l17-10 17 10v-1l-17-10z" style="fill:#FFD6E6;opacity:.1"/>
  <path d="m15 23 17 10v20l17-30z" style="opacity:.2"/>

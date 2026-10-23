@@ -37,9 +37,16 @@ Options:
 
 Chosen: **Hybrid** —
 - 16/22/24: symbolic layer, recolored (perfect for small sizes, the main panel/icon sizes).
-- 32/48/64/96/128/256: color layer, recolored via a *role-aware* recolor map.
-  Neutral fills (grays/whites) -> pink palette. Brand fills (Firefox blue, etc.) ->
-  keep as-is OR map to a pink variant. Decision needed from user on brand handling.
+- 32/48/64/96/128/256: color layer, recolored.
+
+## Recolor strategy (icons/Nezuko-Icons/recolor_batch.py)
+
+- Symbolic layer: rewrite the CSS role colors to the pink palette + set
+  `fill:currentColor` -> primary pink.
+- Color layer: ALL contexts recolored to the pink palette — apps included.
+  Brand logos (Firefox, Chrome, etc.) are pinked too, per the theme design.
+  Neutral fills (white/gray/black) -> pink family; saturated colors ->
+  primary pink; near-black -> dark pink.
 
 ## Pink palette
 
@@ -69,10 +76,14 @@ panel, preferences, animations.
 4. `icons/Nezuko-Icons/convert_svgs.sh` — PNG generation (rsvg-convert).
 5. Remove install-time recolor hack from `install.sh`.
 
-## Open question for user
+## Open question for user (RESOLVED)
 
 How to handle brand-specific app logos (Firefox, Chrome, etc.) that Papirus colors
 authentically? Options:
 - (a) recolor everything pink (loses brand identity)
 - (b) keep brand colors for known apps, pink everything else
 - (c) recolor brand fills to a pink tint
+
+**Decision: (a) — recolor everything pink.** Brand logos are pinked too, per the
+theme design. The recolor logic in `recolor_batch.py` / `recolor.py` applies the
+same pink palette to all contexts with no brand exceptions.

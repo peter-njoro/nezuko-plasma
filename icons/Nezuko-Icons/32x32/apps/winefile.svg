@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" version="1">
- <rect style="fill:#5895dc" width="24" height="17" x="4" y="1" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="24" height="17" x="4" y="1" rx="1.275" ry="1.275"/>
  <rect style="opacity:0.1" width="24" height="17" x="4" y="3" rx="1.275" ry="1.275"/>
- <rect style="fill:#89e058" width="24" height="17" x="4" y="4" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="24" height="17" x="4" y="4" rx="1.275" ry="1.275"/>
  <rect style="opacity:0.1" width="24" height="17" x="4" y="6" rx="1.275" ry="1.275"/>
- <rect style="fill:#ffcd54" width="24" height="17" x="4" y="7" rx="1.275" ry="1.275"/>
+ <rect style="fill:#FF69B4" width="24" height="17" x="4" y="7" rx="1.275" ry="1.275"/>
  <rect opacity=".2" width="28" height="20" x="2" y="11" rx="1.5" ry="1.5"/>
  <rect fill="#8e8e8e" width="28" height="20" x="2" y="10" rx="1.5" ry="1.5"/>
  <rect opacity=".2" width="10" height="3" x="11" y="19" rx="1" ry="1"/>
@@ -13,7 +13,7 @@
  <path style="fill:#FFD6E6;opacity:0.1" d="M 5.2754,6.9996 C 4.569,6.9996 4,7.5686 4,8.275 V 9.275 C 4,8.5686 4.569,7.9996 5.2754,7.9996 H 26.725 C 27.431,7.9996 28,8.5686 28,9.275 V 8.275 C 28,7.5686 27.431,6.9996 26.725,6.9996 Z"/>
  <g>
   <circle style="opacity:0.2" cx="24" cy="24" r="8"/>
-  <circle style="fill:#48aeff" cx="24" cy="23" r="8"/>
+  <circle style="fill:#FF69B4" cx="24" cy="23" r="8"/>
   <rect style="fill:#FFD6E6" width="3" height="3" x="20" y="19" rx=".25" ry=".25"/>
   <rect style="fill:#FFD6E6" width="3" height="3" x="25" y="19" rx=".25" ry=".25"/>
   <rect style="fill:#FFD6E6" width="3" height="3" x="25" y="24" rx=".25" ry=".25"/>

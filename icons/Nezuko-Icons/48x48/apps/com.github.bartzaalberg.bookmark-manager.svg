@@ -8,7 +8,7 @@
  </g>
  <g transform="translate(2,2)">
   <circle style="opacity:0.2" cx="34" cy="34" r="12"/>
-  <circle style="fill:#1396ed" cx="34" cy="33" r="12"/>
+  <circle style="fill:#FF69B4" cx="34" cy="33" r="12"/>
   <path style="fill:#FFD6E6" d="M 34,37.609 29.674,40 30.5,34.935 27,31.348 31.837,30.609 34,26 36.163,30.609 41,31.348 37.5,34.935 38.326,40 Z"/>
  </g>
 </svg>

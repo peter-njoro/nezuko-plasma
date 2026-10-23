@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" version="1">
  <rect style="opacity:0.2" width="38" height="29" x="5" y="16" rx="4.071" ry="3.955"/>
  <path style="fill:#E0529A" d="m 13.968755,4.0002434 a 1.9999941,1.9920389 0 0 0 -1.968549,2.0203763 v 9.9591983 a 1.9999941,1.9920389 0 1 0 3.999589,0 V 6.0206197 a 1.9999941,1.9920389 0 0 0 -2.03104,-2.0203763 z"/>
- <rect style="fill:#494949" width="6" height="3" x="11" y="13" rx="1.2" ry="1.5"/>
- <rect style="fill:#00cdbf" width="38" height="29" x="5" y="15" rx="4.071" ry="3.955"/>
+ <rect style="fill:#B83A78" width="6" height="3" x="11" y="13" rx="1.2" ry="1.5"/>
+ <rect style="fill:#FF69B4" width="38" height="29" x="5" y="15" rx="4.071" ry="3.955"/>
  <circle style="opacity:0.5" cx="17.5" cy="29.5" r="9.5"/>
  <circle style="opacity:0.2" cx="17.5" cy="30.5" r="5.5"/>
- <circle style="fill:#ffa800" cx="17.5" cy="29.5" r="5.5"/>
+ <circle style="fill:#FF69B4" cx="17.5" cy="29.5" r="5.5"/>
  <path style="opacity:0.5" d="m 29.348057,28.00015 a 1.3292594,1.5 0 1 0 0,2.9997 h 9.303885 a 1.3292594,1.5 0 1 0 0,-2.9997 z"/>
  <path style="opacity:0.5" d="m 29.348057,23.00015 a 1.3292594,1.5 0 1 0 0,2.9997 h 9.303885 a 1.3292594,1.5 0 1 0 0,-2.9997 z"/>
  <path style="opacity:0.5" d="m 29.348057,33.00015 a 1.3292594,1.5 0 1 0 0,2.9997 h 9.303885 a 1.3292594,1.5 0 1 0 0,-2.9997 z"/>

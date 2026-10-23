@@ -5,7 +5,7 @@
  <circle opacity="0.2" cx="-26.5" cy="-8.001" r="1.5" transform="scale(-1)"/>
  <circle opacity="0.2" cx="-9.5" cy="-8.001" r="1.5" transform="scale(-1)"/>
  <circle opacity="0.2" cx="-4.5" cy="-8.001" r="1.5" transform="scale(-1)"/>
- <circle style="fill:#ed333b" cx="-26.5" cy="-7.5" r="1.5" transform="scale(-1)"/>
+ <circle style="fill:#FF69B4" cx="-26.5" cy="-7.5" r="1.5" transform="scale(-1)"/>
  <circle fill="#ffffff" cx="-9.5" cy="-7.5" r="1.5" transform="scale(-1)"/>
  <circle fill="#ffffff" cx="-4.5" cy="-7.5" r="1.5" transform="scale(-1)"/>
  <path fill="#fff" opacity="0.1" d="m3.4004 4c-0.7756 0-1.4004 0.6248-1.4004 1.4004v1c0-0.7756 0.6248-1.4004 1.4004-1.4004h25.2c0.775 0 1.4 0.6248 1.4 1.4004v-1c0-0.7756-0.625-1.4004-1.4-1.4004h-25.2z"/>

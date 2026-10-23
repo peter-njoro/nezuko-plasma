@@ -3,7 +3,7 @@
  <ellipse style="fill:#B83A78" cx="15.5" cy="25.65" rx="12.5" ry="4.35"/>
  <ellipse style="fill:#B83A78" cx="15.5" cy="23.5" rx="8.5" ry="2.5"/>
  <path style="opacity:0.2" d="M 3.9,4.900001 H 27.1 L 19,25 h -7 z"/>
- <path style="fill:#008bad" d="M 3.9,3.9000005 H 27.1 L 19,24 h -7 z"/>
+ <path style="fill:#FF69B4" d="M 3.9,3.9000005 H 27.1 L 19,24 h -7 z"/>
  <path style="opacity:0.2;fill:none;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel" d="m 22.5,18.325 c 0,1.201219 -2.995936,2.175 -7,2.175 -4.004064,0 -7,-0.973781 -7,-2.175 0,-1.201219 2.995936,-2.825 7,-2.825 4.004064,0 7,1.623781 7,2.825 z"/>
  <path style="fill:none;stroke:#61fff7;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel" d="m 22.5,17.325 c 0,1.201219 -2.995936,2.175 -7,2.175 -4.004064,0 -7,-0.973781 -7,-2.175 0,-1.201219 2.995936,-2.825 7,-2.825 4.004064,0 7,1.623781 7,2.825 z"/>
  <path style="opacity:0.2;fill:none;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel" d="m 25.5,12.150137 c 0,1.60155 -4.39431,3.349863 -10,3.349863 -5.6056905,0 -10.0000004,-1.748313 -10,-3.349863 -2e-7,-1.60155 4.3943097,-2.6501365 10,-2.6501365 5.60569,0 10,1.0485865 10,2.6501365 z"/>

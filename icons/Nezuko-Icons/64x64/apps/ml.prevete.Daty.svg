@@ -3,11 +3,11 @@
  <rect style="fill:#FFB6D2" width="44" height="56" x="-54" y="-60" rx="3" ry="3" transform="matrix(0,-1,-1,0,0,0)"/>
  <path style="opacity:0.2" d="m 10,17 v 32 h 4 V 17 Z m 6,0 v 32 h 7 V 17 Z m 9,0 v 32 h 2 V 17 Z m 4,0 v 32 h 6 V 17 Z m 9,0 v 32 h 7 V 17 Z m 10,0 v 32 h 2 V 17 Z m 4,0 v 32 h 2 V 17 Z"/>
  <path style="opacity:0.2;fill:#FFD6E6" d="M 7 10 C 5.338 10 4 11.338 4 13 L 4 14 C 4 12.338 5.338 11 7 11 L 57 11 C 58.662 11 60 12.338 60 14 L 60 13 C 60 11.338 58.662 10 57 10 L 7 10 z"/>
- <path style="fill:#df574d" d="m 10,16 h 4 v 32 h -4 z"/>
- <path style="fill:#df574d" d="m 16,16 h 7 v 32 h -7 z"/>
- <path style="fill:#4bae4f" d="m 29,16 h 6 v 32 h -6 z"/>
- <path style="fill:#248afd" d="m 38,16 h 7 v 32 h -7 z"/>
- <path style="fill:#248afd" d="m 48,16 h 2 v 32 h -2 z"/>
- <path style="fill:#4bae4f" d="m 52,16 h 2 v 32 h -2 z"/>
- <path style="fill:#4bae4f" d="m 25,16 h 2 v 32 h -2 z"/>
+ <path style="fill:#FF69B4" d="m 10,16 h 4 v 32 h -4 z"/>
+ <path style="fill:#FF69B4" d="m 16,16 h 7 v 32 h -7 z"/>
+ <path style="fill:#FF69B4" d="m 29,16 h 6 v 32 h -6 z"/>
+ <path style="fill:#FF69B4" d="m 38,16 h 7 v 32 h -7 z"/>
+ <path style="fill:#FF69B4" d="m 48,16 h 2 v 32 h -2 z"/>
+ <path style="fill:#FF69B4" d="m 52,16 h 2 v 32 h -2 z"/>
+ <path style="fill:#FF69B4" d="m 25,16 h 2 v 32 h -2 z"/>
 </svg>

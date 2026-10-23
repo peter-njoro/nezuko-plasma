@@ -7,7 +7,7 @@
  <path fill="#d24646" d="m23 11.5a2.5 2.5 0 0 1 -5 0 2.5 2.5 0 1 1 5 0z"/>
  <path fill="#606060" d="m16 19.501a1.5 1.5 0 0 1 -3 0 1.5 1.5 0 1 1 3 0z"/>
  <circle style="opacity:0.2" cx="24" cy="24" r="8"/>
- <circle style="fill:#009545" cx="24" cy="23" r="8"/>
+ <circle style="fill:#FF69B4" cx="24" cy="23" r="8"/>
  <g style="fill:#FFD6E6" transform="translate(4,2)">
   <path d="m 19,20 2,0 0,6 -2,0 z"/>
   <path d="m 19,16 2,0 0,2 -2,0 z"/>

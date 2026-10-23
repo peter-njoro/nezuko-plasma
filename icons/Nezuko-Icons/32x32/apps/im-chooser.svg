@@ -16,10 +16,10 @@
  <circle style="fill:#FFB6D2" cx="10.5" cy="10.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="15.5" cy="10.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="20.5" cy="10.5" r="1.5"/>
- <circle style="fill:#ff8834" cx="25.5" cy="10.5" r="1.5"/>
+ <circle style="fill:#FF69B4" cx="25.5" cy="10.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="8.5" cy="16.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="13.5" cy="16.5" r="1.5"/>
- <circle style="fill:#ff8834" cx="18.5" cy="16.5" r="1.5"/>
+ <circle style="fill:#FF69B4" cx="18.5" cy="16.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="23.5" cy="16.5" r="1.5"/>
  <rect style="fill:#FFB6D2" width="20" height="3" x="6" y="21" rx=".75" ry=".75"/>
 </svg>

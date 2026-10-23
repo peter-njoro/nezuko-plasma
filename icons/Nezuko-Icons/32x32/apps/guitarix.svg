@@ -8,10 +8,10 @@
  <rect style="opacity:0.2" width="28" height="11" x="2" y="2" rx="1.4" ry="1.571"/>
  <rect style="fill:#B83A78" width="28" height="11" x="2" y="1" rx="1.4" ry="1.571"/>
  <rect style="opacity:0.2" width="24" height="7" x="4" y="4" rx="1.494" ry="1.574"/>
- <rect style="fill:#63a535" width="24" height="7" x="4" y="3" rx="1.494" ry="1.574"/>
+ <rect style="fill:#FF69B4" width="24" height="7" x="4" y="3" rx="1.494" ry="1.574"/>
  <circle style="fill:#B83A78" cx="7.5" cy="6.5" r="1.5"/>
- <rect style="fill:#983a0e" width="3" height="3" x="23" y="5"/>
- <rect style="fill:#f7bf32" width="1" height="1" x="24" y="6"/>
+ <rect style="fill:#FF69B4" width="3" height="3" x="23" y="5"/>
+ <rect style="fill:#FF69B4" width="1" height="1" x="24" y="6"/>
  <circle style="fill:#B83A78" cx="11.5" cy="6.5" r="1.5"/>
  <circle style="fill:#B83A78" cx="15.5" cy="6.5" r="1.5"/>
  <circle style="fill:#FFB6D2" cx="22" cy="21" r="6"/>

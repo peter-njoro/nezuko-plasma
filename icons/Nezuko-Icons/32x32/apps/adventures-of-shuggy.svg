@@ -5,11 +5,11 @@
  <path d="m9 25 3 6 4-4 4 4 3-6v-1h-14z" style="opacity:.2"/>
  <path d="m9 24 3 6 4-4 4 4 3-6v-1h-14z" style="fill:#FFB6D2"/>
  <path d="m7 3v22s3 2 9 2 9-2 9-2v-22l-6 7h-6z" style="opacity:.1"/>
- <path d="m7 2v22s3 2 9 2 9-2 9-2v-22l-6 7h-6z" style="fill:#9966ff"/>
+ <path d="m7 2v22s3 2 9 2 9-2 9-2v-22l-6 7h-6z" style="fill:#FF69B4"/>
  <circle cx="12.5" cy="20.500002" r="3.5" style="opacity:.2"/>
- <circle cx="12.5" cy="19.500002" r="3.5" style="fill:#15b7ff"/>
+ <circle cx="12.5" cy="19.500002" r="3.5" style="fill:#FF69B4"/>
  <circle cx="19.500002" cy="20.500002" r="3.5" style="opacity:.2"/>
- <circle cx="19.500002" cy="19.500002" r="3.5" style="fill:#15b7ff"/>
+ <circle cx="19.500002" cy="19.500002" r="3.5" style="fill:#FF69B4"/>
  <path d="m7 2v1l6 7h6l6-7v-1l-6 7h-6l-6-7z" style="fill:#FFD6E6;opacity:.2"/>
  <path d="M 12.5 16 A 3.5 3.5 0 0 0 9 19.5 A 3.5 3.5 0 0 0 9.0390625 20.005859 A 3.5 3.5 0 0 1 12.5 17 A 3.5 3.5 0 0 1 15.960938 19.994141 A 3.5 3.5 0 0 0 16 19.5 A 3.5 3.5 0 0 0 12.5 16 z " style="fill:#FFD6E6;opacity:.2"/>
  <path d="M 19.5 16 A 3.5 3.5 0 0 0 16 19.5 A 3.5 3.5 0 0 0 16.039062 20.005859 A 3.5 3.5 0 0 1 19.5 17 A 3.5 3.5 0 0 1 22.960938 19.994141 A 3.5 3.5 0 0 0 23 19.5 A 3.5 3.5 0 0 0 19.5 16 z " style="fill:#FFD6E6;opacity:.2"/>

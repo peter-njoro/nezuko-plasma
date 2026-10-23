@@ -3,7 +3,7 @@
  <rect style="fill:#FFB6D2" width="22" height="28" x="-27" y="2" rx="1.375" ry="1.4" transform="scale(-1,1)"/>
  <circle style="fill:#B83A78" cx="-19" cy="16" r="9" transform="rotate(-90)"/>
  <circle style="opacity:0.2" cx="-19.5" cy="-16" r="7" transform="matrix(0,-1,-1,0,0,0)"/>
- <circle style="fill:#fec006" cx="-19" cy="-16" r="7" transform="matrix(0,-1,-1,0,0,0)"/>
+ <circle style="fill:#FF69B4" cx="-19" cy="-16" r="7" transform="matrix(0,-1,-1,0,0,0)"/>
  <circle style="fill:#B83A78" cx="-19" cy="-16" r="3" transform="matrix(0,-1,-1,0,0,0)"/>
  <circle style="fill:#B83A78" cx="6.5" cy="-9.5" r="1.5" transform="rotate(90)"/>
  <circle style="fill:#B83A78" cx="6.5" cy="-22.5" r="1.5" transform="rotate(90)"/>

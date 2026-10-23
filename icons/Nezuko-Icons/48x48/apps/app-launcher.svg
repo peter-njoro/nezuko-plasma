@@ -12,14 +12,14 @@
  <rect style="opacity:0.1" width="6" height="6" x="21" y="30" rx="2" ry="2"/>
  <rect style="opacity:0.1" width="6" height="6" x="30" y="30" rx="2" ry="2"/>
  <g>
-  <rect style="fill:#eb6253" width="6" height="6" x="12" y="13" rx="2" ry="2"/>
-  <rect style="fill:#2181dd" width="6" height="6" x="21" y="13" rx="2" ry="2"/>
-  <rect style="fill:#2181dd" width="6" height="6" x="30" y="13" rx="2" ry="2"/>
-  <rect style="fill:#4d9133" width="6" height="6" x="12" y="21" rx="2" ry="2"/>
-  <rect style="fill:#eb6253" width="6" height="6" x="21" y="21" rx="2" ry="2"/>
-  <rect style="fill:#2181dd" width="6" height="6" x="30" y="21" rx="2" ry="2"/>
-  <rect style="fill:#4d9133" width="6" height="6" x="12" y="29" rx="2" ry="2"/>
-  <rect style="fill:#4d9133" width="6" height="6" x="21" y="29" rx="2" ry="2"/>
-  <rect style="fill:#eb6253" width="6" height="6" x="30" y="29" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="12" y="13" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="21" y="13" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="30" y="13" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="12" y="21" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="21" y="21" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="30" y="21" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="12" y="29" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="21" y="29" rx="2" ry="2"/>
+  <rect style="fill:#FF69B4" width="6" height="6" x="30" y="29" rx="2" ry="2"/>
  </g>
 </svg>

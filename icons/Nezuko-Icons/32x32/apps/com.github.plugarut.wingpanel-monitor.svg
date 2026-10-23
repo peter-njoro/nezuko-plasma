@@ -7,13 +7,13 @@
  <circle style="opacity:0.2" cx="21.174" cy="5.673" r="1.5" transform="matrix(0.86602252,0.500005,-0.49999501,0.86602828,0,0)"/>
  <circle style="fill:#FFD6E6" cx="20.674" cy="4.807" r="1.5" transform="matrix(0.86602252,0.500005,-0.49999501,0.86602828,0,0)"/>
  <circle style="opacity:0.2" cx="15.5" cy="5.5" r="1.5"/>
- <circle style="fill:#87d22b" cx="15.5" cy="4.5" r="1.5"/>
+ <circle style="fill:#FF69B4" cx="15.5" cy="4.5" r="1.5"/>
  <path style="fill:#555761" d="M 8 23 L 8 25 L 11 25 L 11 23 L 8 23 z M 12 23 L 12 26 L 15 26 L 15 23 L 12 23 z"/>
  <path style="fill:#555761" d="m 16,23 v 1 h 3 v -1 z"/>
- <path style="fill:#87d22b" d="m 20,23 v 5 h 3 v -5 z"/>
- <path style="fill:#87d22b" d="m 16,24 v 4 h 3 v -4 z"/>
- <path style="fill:#87d22b" d="m 8,25 v 3 h 3 v -3 z"/>
- <path style="fill:#87d22b" d="m 12,26 v 2 h 3 v -2 z"/>
+ <path style="fill:#FF69B4" d="m 20,23 v 5 h 3 v -5 z"/>
+ <path style="fill:#FF69B4" d="m 16,24 v 4 h 3 v -4 z"/>
+ <path style="fill:#FF69B4" d="m 8,25 v 3 h 3 v -3 z"/>
+ <path style="fill:#FF69B4" d="m 12,26 v 2 h 3 v -2 z"/>
  <path style="opacity:0.2" d="M 8 28 L 8 29 L 11 29 L 11 28 L 8 28 z M 12 28 L 12 29 L 15 29 L 15 28 L 12 28 z M 16 28 L 16 29 L 19 29 L 19 28 L 16 28 z M 20 28 L 20 29 L 23 29 L 23 28 L 20 28 z"/>
  <path style="opacity:0.2" d="M 8 23 L 8 24 L 11 24 L 11 23 L 8 23 z M 12 23 L 12 24 L 15 24 L 15 23 L 12 23 z M 16 23 L 16 24 L 19 24 L 19 23 L 16 23 z"/>
  <path style="opacity:0.2;fill:#FFD6E6" d="M 20 23 L 20 24 L 23 24 L 23 23 L 20 23 z M 16 24 L 16 25 L 19 25 L 19 24 L 16 24 z M 8 25 L 8 26 L 11 26 L 11 25 L 8 25 z M 12 26 L 12 27 L 15 27 L 15 26 L 12 26 z"/>

@@ -12,5 +12,5 @@
  <path fill="#cd5252" d="m21 15h6c-0.481 4.109-3 8-3 8s-3-4.6183-3-8z"/>
  <path style="fill:none;stroke:#f34235;stroke-width:2;stroke-linecap:round;stroke-linejoin:round" d="M 28,33 V 25 L 26,27"/>
  <rect style="opacity:0.2" width="6" height="2" x="18" y="29" rx="1" ry="1"/>
- <rect style="fill:#f44336" width="6" height="2" x="18" y="28" rx="1" ry="1"/>
+ <rect style="fill:#FF69B4" width="6" height="2" x="18" y="28" rx="1" ry="1"/>
 </svg>

@@ -12,6 +12,6 @@
  <rect x="12" y="7" width="8" height="1" style="fill:#a1a1a1"/>
  <rect x="12" y="9" width="11" height="1" style="fill:#a1a1a1"/>
  <rect x="2" y="11" width="28" height="3" rx=".69999999" ry=".75" style="opacity:.2"/>
- <rect x="2" y="10" width="28" height="3" rx=".69999999" ry=".75" style="fill:#3584f3"/>
+ <rect x="2" y="10" width="28" height="3" rx=".69999999" ry=".75" style="fill:#FF69B4"/>
  <path transform="matrix(0,-1,-1,0,0,0)" d="m-2-6.375c0 0.76175-0.6247906 1.375-1.4003906 1.375h-1c0.7756 0 1.4003906-0.61325 1.4003906-1.375v-19.25c0-0.76175-0.6247906-1.375-1.4003906-1.375h1c0.7756 0 1.4003906 0.61325 1.4003906 1.375v19.25z" style="fill:#FFD6E6;opacity:.1"/>
 </svg>

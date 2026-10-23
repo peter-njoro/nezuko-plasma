@@ -6,13 +6,13 @@
  <path d="m13.001953 4.9785156a2.0002 2.0002 0 0 0-1.955078 2.5 2.0002 2.0002 0 0 1 1.955078-1.5 2.0002 2.0002 0 0 1 1.560547 0.7714844l4 5a2.0009763 2.0009763 0 0 1 0.373047 0.748047 2.0009763 2.0009763 0 0 0-0.373047-1.748047l-4-5a2.0002 2.0002 0 0 0-1.560547-0.7714844z" style="fill:#FFD6E6;opacity:.1"/>
  <path d="m51 7-4 5" style="fill:none;stroke-linecap:round;stroke-width:4;stroke:#434343"/>
  <path d="m50.9375 4.9785156a2.0002 2.0002 0 0 0-1.5 0.7714844l-4 5a2.0009763 2.0009763 0 0 0-0.373047 1.75 2.0009763 2.0009763 0 0 1 0.373047-0.75l4-5a2.0002 2.0002 0 0 1 1.5-0.7714844 2.0002 2.0002 0 0 1 2.015625 1.4980469 2.0002 2.0002 0 0 0-2.015625-2.4980469z" style="fill:#FFD6E6;opacity:.1"/>
- <rect x="7" y="10" width="50" height="50" ry="3" style="fill:#ff57a3"/>
+ <rect x="7" y="10" width="50" height="50" ry="3" style="fill:#FF69B4"/>
  <circle cx="42" cy="27" r="8" style="opacity:.1"/>
- <circle cx="42" cy="26" r="8" style="fill:#fb3705"/>
+ <circle cx="42" cy="26" r="8" style="fill:#FF69B4"/>
  <circle cx="22" cy="27" r="8" style="opacity:.1"/>
  <circle cx="42" cy="26" r="3" style="fill:#B83A78"/>
  <rect x="16" y="40" width="32" height="14" style="opacity:.1"/>
- <circle cx="22" cy="26" r="8" style="fill:#fb3705"/>
+ <circle cx="22" cy="26" r="8" style="fill:#FF69B4"/>
  <circle cx="22" cy="26" r="3" style="fill:#B83A78"/>
  <rect x="16" y="39" width="32" height="14" style="fill:#B83A78"/>
  <path d="m18 41v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4zm-24 6v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4zm6 0v4h4v-4z" style="fill:#FFD6E6"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" version="1.1">
  <path style="opacity:0.2" d="m 4,11 v 44 h 4 v -4 h 4 v 4 h 40 v -4 h 4 v 4 h 4 V 11 h -4 v 4 H 52 V 11 H 12 v 4 H 8 v -4 z m 4,8 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,27 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,35 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,43 h 4 v 4 H 8 Z m 44,0 h 4 v 4 h -4 z"/>
- <path style="fill:#ed5b36" d="m 4,10 v 44 h 4 v -4 h 4 v 4 h 40 v -4 h 4 v 4 h 4 V 10 h -4 v 4 H 52 V 10 H 12 v 4 H 8 v -4 z m 4,8 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,26 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,34 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,42 h 4 v 4 H 8 Z m 44,0 h 4 v 4 h -4 z"/>
+ <path style="fill:#FF69B4" d="m 4,10 v 44 h 4 v -4 h 4 v 4 h 40 v -4 h 4 v 4 h 4 V 10 h -4 v 4 H 52 V 10 H 12 v 4 H 8 v -4 z m 4,8 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,26 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,34 h 4 v 4 H 8 Z m 44,0 h 4 v 4 H 52 Z M 8,42 h 4 v 4 H 8 Z m 44,0 h 4 v 4 h -4 z"/>
  <path style="opacity:0.2" d="M 32,48.808 20.329268,37 h 23.341464 z"/>
  <path style="fill:#FFD6E6" d="M 32,47.808 20.329268,36 h 23.341464 z"/>
  <path style="fill:#FFD6E6" d="m 26,30 h 12 v 8.966536 H 26 Z"/>

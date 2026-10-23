@@ -6,7 +6,7 @@
  <rect style="fill:#FFB6D2" ry="1" height="6" width="28" y="16" x="2"/>
  <path style="fill:#B83A78" d="m16 23a1 1 0 0 0 -1 1 1 1 0 0 0 0.683594 0.947266l-0.683594 2.052734h2l-0.683594-2.052734a1 1 0 0 0 0.683594 -0.947266 1 1 0 0 0 -1 -1z"/>
  <path style="fill:#FFD6E6" d="m8 16h16v-3s0-7-8-7-8 7-8 7z"/>
- <circle r="3" style="fill:#1b87e6" cx="16" cy="12"/>
+ <circle r="3" style="fill:#FF69B4" cx="16" cy="12"/>
  <circle r="1" style="fill:#B83A78" cx="16" cy="12"/>
  <circle r="2" style="opacity:.1" cx="7" cy="20"/>
  <circle r="2" style="fill:#B83A78" cx="7" cy="19"/>

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" version="1">
  <path style="opacity:0.2" d="m 26.5,10 a 10.5,10.5 0 0 0 -8.949219,5.023438 7,7 0 0 0 -6.478515,6.02539 A 9,9 0 0 0 3,30 9,9 0 0 0 12,39 H 36 A 9,9 0 0 0 45,30 9,9 0 0 0 36.980469,21.064453 10.5,10.5 0 0 0 37,20.5 10.5,10.5 0 0 0 26.5,10 Z"/>
- <circle style="fill:#88ba14" cx="-36" cy="29" r="9" transform="scale(-1,1)"/>
- <circle style="fill:#88ba14" cx="-26.5" cy="19.5" r="10.5" transform="scale(-1,1)"/>
- <circle style="fill:#88ba14" cx="-18" cy="21" r="7" transform="scale(-1,1)"/>
- <circle style="fill:#88ba14" cx="-12" cy="29" r="9" transform="scale(-1,1)"/>
- <rect style="fill:#88ba14" width="24" height="12" x="-36" y="26" transform="scale(-1,1)"/>
+ <circle style="fill:#FF69B4" cx="-36" cy="29" r="9" transform="scale(-1,1)"/>
+ <circle style="fill:#FF69B4" cx="-26.5" cy="19.5" r="10.5" transform="scale(-1,1)"/>
+ <circle style="fill:#FF69B4" cx="-18" cy="21" r="7" transform="scale(-1,1)"/>
+ <circle style="fill:#FF69B4" cx="-12" cy="29" r="9" transform="scale(-1,1)"/>
+ <rect style="fill:#FF69B4" width="24" height="12" x="-36" y="26" transform="scale(-1,1)"/>
  <path style="opacity:0.2" d="m 16,20 v 2 4 2 6 h 4 12 V 32 28 26 20 H 20 Z m 4,2 h 8 v 4 h -8 z m 0,6 h 8 v 4 h -8 z"/>
  <rect style="fill:#FFD6E6" width="4" height="14" x="16" y="19"/>
  <rect style="fill:#FFD6E6" width="4" height="14" x="28" y="19"/>

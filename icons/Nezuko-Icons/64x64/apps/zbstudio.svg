@@ -16,7 +16,7 @@
  <circle cx="41" cy="45" r="5" style="opacity:.2"/>
  <circle cx="41" cy="44" r="5" style="fill:#FFD6E6"/>
  <circle cx="32" cy="10" r="1" style="fill:#FFD6E6"/>
- <circle cx="32" cy="21" r="7" style="fill:#d56d36"/>
+ <circle cx="32" cy="21" r="7" style="fill:#FF69B4"/>
  <circle cx="32" cy="21" r="3" style="fill:#FFD6E6"/>
  <path d="m24 8c-2.216 0-4 1.784-4 4v1c0-2.216 1.784-4 4-4h16c2.216 0 4 1.784 4 4v-1c0-2.216-1.784-4-4-4h-16z" style="fill:#FFD6E6;opacity:.1"/>
  <path d="M 6.9707031 15.972656 A 2.0002 2.0002 0 0 0 5 18 L 5 19 A 2.0002 2.0002 0 0 1 6.9707031 16.972656 A 2.0002 2.0002 0 0 1 9 19 L 9 18 A 2.0002 2.0002 0 0 0 6.9707031 15.972656 z " style="fill:#FFD6E6;opacity:.1"/>

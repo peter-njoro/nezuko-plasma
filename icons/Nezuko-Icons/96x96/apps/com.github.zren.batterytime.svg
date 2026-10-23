@@ -7,6 +7,6 @@
  <rect style="opacity:0.4" width="26" height="8" x="11" y="11"/>
  <path fill="#fff" opacity=".2" d="m14 4v1h20v-1h-20z"/>
  <circle style="opacity:0.2" cx="36" cy="37" r="11"/>
- <circle style="fill:#cd4242" cx="36" cy="36" r="11"/>
+ <circle style="fill:#FF69B4" cx="36" cy="36" r="11"/>
  <path style="fill:#FFD6E6" d="M 36 29 A 7 7 0 0 0 29 36 A 7 7 0 0 0 36 43 A 7 7 0 0 0 43 36 A 7 7 0 0 0 36 29 z M 36 31 A 5 5 0 0 1 41 36 A 5 5 0 0 1 36 41 A 5 5 0 0 1 31 36 A 5 5 0 0 1 36 31 z M 35 32 L 35 35 L 35 36 L 35 37 L 40 37 L 40 35 L 37 35 L 37 32 L 35 32 z"/>
 </svg>

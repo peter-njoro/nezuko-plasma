@@ -13,11 +13,11 @@
  <path opacity=".2" d="m3 27.699v1c0 0.72 0.5806 1.301 1.3008 1.301h23.398c0.72 0 1.301-0.581 1.301-1.301v-1c0 0.72-0.581 1.301-1.301 1.301h-23.398c-0.7204 0-1.301-0.581-1.301-1.301z"/>
  <rect style="fill:#B83A78" width="12" height="3" x="10" y="25"/>
  <circle style="fill:#FFD6E6" cx="18" cy="21" r="2"/>
- <rect style="fill:#fcd800" width="4" height="4" x="14" y="6"/>
- <rect style="fill:#fcd800" width="4" height="4" x="19" y="6"/>
- <rect style="fill:#fcd800" width="4" height="4" x="24" y="6"/>
- <rect style="fill:#fcd800" width="4" height="4" x="4" y="11"/>
- <rect style="fill:#fcd800" width="4" height="4" x="14" y="11"/>
- <rect style="fill:#fcd800" width="4" height="4" x="19" y="11"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="14" y="6"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="19" y="6"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="24" y="6"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="4" y="11"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="14" y="11"/>
+ <rect style="fill:#FF69B4" width="4" height="4" x="19" y="11"/>
  <path fill="#fff" style="opacity:0.1" d="m4.3008 3c-0.7202 0-1.3008 0.5806-1.3008 1.3008v1c0-0.7202 0.5806-1.3008 1.3008-1.3008h23.398c0.72 0 1.301 0.5806 1.301 1.3008v-1c0-0.7202-0.581-1.3008-1.301-1.3008h-23.398z"/>
 </svg>

@@ -2,7 +2,7 @@
  <g transform="matrix(1.9971556,0,0,1.9999951,2.0312884,2.0001029)">
   <path d="m7 16.5 3 1 1 4 1-4 3-1v-1h-3v-14h-2v14h-3z" style="opacity:.2"/>
   <path d="m7 16 3 1 1 4 1-4 3-1v-1h-3v-14h-2v14h-3z" style="fill:#b2b2b2"/>
-  <path d="m7 16h8v-11h-8z" style="fill:#d33e33"/>
+  <path d="m7 16h8v-11h-8z" style="fill:#FF69B4"/>
   <path d="m9.5 1.49995a0.50005 0.50005 0 1 0 0 1h3a0.50005 0.50005 0 1 0 0-1z" style="opacity:.2"/>
   <path d="m9.5 1a0.50005 0.50005 0 1 0 0 1h3a0.50005 0.50005 0 1 0 0-1z" style="fill:#FFB6D2"/>
   <path d="m9 14.5h1l1-1 1 1h1l-2-2z" style="opacity:.1"/>

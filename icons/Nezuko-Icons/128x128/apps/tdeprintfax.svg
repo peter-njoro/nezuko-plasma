@@ -14,10 +14,10 @@
  <rect style="fill:#FFD6E6" width="6" height="6" x="51" y="15" rx="2.25" ry="2.25"/>
  <rect style="fill:#FFD6E6" width="6" height="6" x="43" y="15" rx="2.25" ry="2.25"/>
  <rect style="fill:#FFD6E6" width="6" height="6" x="35" y="15" rx="2.25" ry="2.25"/>
- <rect style="fill:#ff5a5a" width="6" height="6" x="51" y="23" rx="2.25" ry="2.25"/>
+ <rect style="fill:#FF69B4" width="6" height="6" x="51" y="23" rx="2.25" ry="2.25"/>
  <rect style="fill:#FFD6E6" width="6" height="6" x="43" y="23" rx="2.25" ry="2.25"/>
- <rect style="fill:#6bd70f" width="6" height="6" x="35" y="23" rx="2.25" ry="2.25"/>
- <rect style="fill:#48cdff" width="20" height="12" x="9" y="12"/>
+ <rect style="fill:#FF69B4" width="6" height="6" x="35" y="23" rx="2.25" ry="2.25"/>
+ <rect style="fill:#FF69B4" width="20" height="12" x="9" y="12"/>
  <path style="fill:#FFD6E6;opacity:0.1" d="M 6.8007812 4 C 5.2495813 4 4 5.2495813 4 6.8007812 L 4 7.8007812 C 4 6.2495813 5.2495813 5 6.8007812 5 L 57.199219 5 C 58.750419 5 60 6.2495813 60 7.8007812 L 60 6.8007812 C 60 5.2495813 58.750419 4 57.199219 4 L 6.8007812 4 z"/>
  <rect style="opacity:0.1" width="20" height="1" x="9" y="12"/>
 </svg>

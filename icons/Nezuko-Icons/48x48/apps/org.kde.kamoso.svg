@@ -5,9 +5,9 @@
  <circle style="fill:#E0529A" cx="24" cy="22" r="18"/>
  <circle style="fill:#B83A78" cx="24" cy="22" r="13"/>
  <circle style="opacity:0.2" cx="24" cy="23" r="10"/>
- <circle style="fill:#00b1c4" cx="24" cy="22" r="10"/>
+ <circle style="fill:#FF69B4" cx="24" cy="22" r="10"/>
  <circle style="opacity:0.2" cx="24" cy="23" r="6"/>
- <circle style="fill:#70f4ff" cx="24" cy="22" r="6"/>
+ <circle style="fill:#FF69B4" cx="24" cy="22" r="6"/>
  <path style="fill:#FFD6E6;opacity:0.2" d="M 24 16 A 6 6 0 0 0 18 22 A 6 6 0 0 0 18.035 22.5 A 6 6 0 0 1 24 17 A 6 6 0 0 1 29.971 22.412 A 6 6 0 0 0 30 22 A 6 6 0 0 0 24 16 z"/>
  <path style="fill:#FFD6E6;opacity:0.2" d="M 24 4 A 18 18 0 0 0 6 22 A 18 18 0 0 0 6.0352 22.5 A 18 18 0 0 1 24 5 A 18 18 0 0 1 41.982 22.254 A 18 18 0 0 0 42 22 A 18 18 0 0 0 24 4 z"/>
 </svg>

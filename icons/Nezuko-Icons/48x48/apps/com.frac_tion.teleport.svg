@@ -3,7 +3,7 @@
  <ellipse style="fill:#B83A78" cx="24" cy="38" rx="18" ry="6"/>
  <ellipse style="fill:#B83A78" cx="24" cy="35" rx="12" ry="3"/>
  <path style="opacity:0.2" d="M 8,9 H 40 L 30,36 H 18 Z"/>
- <path style="fill:#008bad" d="M 8,8 H 40 L 30,35 H 18 Z"/>
+ <path style="fill:#FF69B4" d="M 8,8 H 40 L 30,35 H 18 Z"/>
  <ellipse style="opacity:0.2;fill:none;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel" cx="24" cy="26" rx="10" ry="3"/>
  <path style="fill:none;stroke:#61fff7;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel" d="M 34,25 A 10,3 0 0 1 24,28 10,3 0 0 1 14,25 10,3 0 0 1 24,22 10,3 0 0 1 34,25 Z"/>
  <ellipse style="opacity:0.2;fill:none;stroke:#000000;stroke-width:4;stroke-linecap:square;stroke-linejoin:bevel" cx="24" cy="19" rx="14" ry="4"/>

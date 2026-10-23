@@ -15,5 +15,5 @@
   </g>
  </g>
  <path style="opacity:0.1;fill-rule:evenodd" d="M 15 12 L 15 13 L 15 22 L 24 13 L 33 22 L 33 13 L 33 12 L 15 12 z M 33 22 L 24 31 L 15 22 L 15 30 L 24 39 L 33 30 L 33 22 z"/>
- <path style="fill:#3a78b4;fill-rule:evenodd" d="m 15,12 0,9 9,-9 -9,0 z m 9,0 9,9 0,-9 -9,0 z m 9,9 -9,9 -9,-9 0,8 9,9 9,-9 0,-8 z"/>
+ <path style="fill:#FF69B4;fill-rule:evenodd" d="m 15,12 0,9 9,-9 -9,0 z m 9,0 9,9 0,-9 -9,0 z m 9,9 -9,9 -9,-9 0,8 9,9 9,-9 0,-8 z"/>
 </svg>

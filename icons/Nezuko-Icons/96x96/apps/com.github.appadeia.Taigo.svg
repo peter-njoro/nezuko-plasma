@@ -1,10 +1,10 @@
 <svg width="48" height="48" version="1.1" xmlns="http://www.w3.org/2000/svg">
  <g transform="matrix(2,0,0,2,2,2)">
   <path d="m11 1.5c4 0 8 5 8 11s-3.986135 9-8 9c-4.0138649 0-8-3-8-9s4-11 8-11z" style="opacity:.2"/>
-  <path d="m11 1c4 0 8 5 8 11s-3.986135 9-8 9c-4.0138649 0-8-3-8-9s4-11 8-11z" style="fill:#db8bdc"/>
+  <path d="m11 1c4 0 8 5 8 11s-3.986135 9-8 9c-4.0138649 0-8-3-8-9s4-11 8-11z" style="fill:#FF69B4"/>
   <circle cx="11" cy="19.5" r="1" style="opacity:.2"/>
-  <path d="m 11,3 c -3,0 -6,5 -6,9 0,1.665202 0.5242621,3.151877 1.3476562,4.326172 L 7,16 l 2,1 2,-1 2,1 2,-1 0.652344,0.326172 C 16.475738,15.151877 17,13.665202 17,12 17,8 14,3 11,3 Z" style="fill:#b356c3"/>
-  <rect x="7" y="6" width="8" height="8" ry="1" style="fill:#333333"/>
+  <path d="m 11,3 c -3,0 -6,5 -6,9 0,1.665202 0.5242621,3.151877 1.3476562,4.326172 L 7,16 l 2,1 2,-1 2,1 2,-1 0.652344,0.326172 C 16.475738,15.151877 17,13.665202 17,12 17,8 14,3 11,3 Z" style="fill:#FF69B4"/>
+  <rect x="7" y="6" width="8" height="8" ry="1" style="fill:#B83A78"/>
   <circle cx="11" cy="19" r="1" style="fill:#f9f9f9"/>
   <circle cx="14" cy="18.5" r="1" style="opacity:.2"/>
   <circle cx="14" cy="18" r="1" style="fill:#f9f9f9"/>

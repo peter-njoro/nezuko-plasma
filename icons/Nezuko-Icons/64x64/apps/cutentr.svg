@@ -2,8 +2,8 @@
  <path style="opacity:0.2" d="M 60,58.2 V 31 H 4 V 58.2 C 4,59.7512 5.2488,61 6.8,61 h 50.4 c 1.5512,0 2.8,-1.2488 2.8,-2.8 z"/>
  <rect style="fill:#c5c5cc" width="56" height="56" x="4" y="4" rx="2.8" ry="2.8"/>
  <path style="fill:#8f8f8f" d="M 60,57.2 V 31 H 4 V 57.2 C 4,58.7512 5.2488,60 6.8,60 h 50.4 c 1.5512,0 2.8,-1.2488 2.8,-2.8 z"/>
- <path style="fill:#3e3e3e" d="M 16,8 H 48 V 27 H 16 M 16,8"/>
- <path style="fill:#3e3e3e" d="M 20,37 H 44 V 55 H 20 m 0,-18"/>
+ <path style="fill:#B83A78" d="M 16,8 H 48 V 27 H 16 M 16,8"/>
+ <path style="fill:#B83A78" d="M 20,37 H 44 V 55 H 20 m 0,-18"/>
  <path style="opacity:0.2" d="m 10,41 v 4 H 6 v 4 h 4 v 4 h 4 v -4 h 4 v -4 h -4 v -4 z"/>
  <g style="fill:#FFB6D2" transform="matrix(1.3333333,0,0,1.3333333,-7.3600006,22.76)">
   <rect width="3" height="9" x="13.02" y="12.93" ry="0"/>

@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" version="1.1">
  <rect style="opacity:0.2" width="28.284" height="28.284" x="20.51" y="-13.44" transform="rotate(45)"/>
- <path style="fill:#f1ac3c" d="m 24,4 -6,6 h 4 v 12 h 4 V 10 h 4 z"/>
- <path style="fill:#87b224" d="m 22,26 v 12 h -4 l 6,6 6,-6 H 26 V 26 Z"/>
- <path style="fill:#3275ba" d="m 38,18 v 4 H 26 v 4 h 12 v 4 l 6,-6 z"/>
- <path style="fill:#a23c8b" d="m 10,18 -6,6 6,6 V 26 H 22 V 22 H 10 Z"/>
- <rect style="fill:#87b224" width="12" height="12" x="10" y="10"/>
- <rect style="fill:#3275ba" width="12" height="12" x="10" y="26"/>
- <rect style="fill:#f1ac3c" width="12" height="12" x="26" y="26"/>
- <rect style="fill:#a23c8b" width="12" height="12" x="26" y="10"/>
+ <path style="fill:#FF69B4" d="m 24,4 -6,6 h 4 v 12 h 4 V 10 h 4 z"/>
+ <path style="fill:#FF69B4" d="m 22,26 v 12 h -4 l 6,6 6,-6 H 26 V 26 Z"/>
+ <path style="fill:#FF69B4" d="m 38,18 v 4 H 26 v 4 h 12 v 4 l 6,-6 z"/>
+ <path style="fill:#FF69B4" d="m 10,18 -6,6 6,6 V 26 H 22 V 22 H 10 Z"/>
+ <rect style="fill:#FF69B4" width="12" height="12" x="10" y="10"/>
+ <rect style="fill:#FF69B4" width="12" height="12" x="10" y="26"/>
+ <rect style="fill:#FF69B4" width="12" height="12" x="26" y="26"/>
+ <rect style="fill:#FF69B4" width="12" height="12" x="26" y="10"/>
  <path style="opacity:0.2;fill:#FFD6E6" d="M 24 4 L 4 24 L 4.5 24.5 L 24 5 L 43.5 24.5 L 44 24 L 24 4 z"/>
  <g style="opacity:0.2" transform="translate(0,1.000422)">
   <path d="M 9.8574219,9.8574219 V 18.34375 L 12.685547,15.515625 21.171875,24 24,21.171875 15.515625,12.685547 18.34375,9.8574219 Z M 24,21.171875 26.828125,24 35.314453,15.515625 38.142578,18.34375 V 9.8574219 H 29.65625 l 2.828125,2.8281251 z M 26.828125,24 24,26.828125 l 8.484375,8.486328 -2.828125,2.828125 h 8.486328 V 29.65625 l -2.828125,2.828125 z M 24,26.828125 21.171875,24 12.685547,32.484375 9.8574219,29.65625 v 8.486328 H 18.34375 l -2.828125,-2.828125 z"/>
