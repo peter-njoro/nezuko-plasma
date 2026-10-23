@@ -84,10 +84,12 @@
 - Full plan: `PHASE2_PLASMA_STYLE.md`.
 - Output: `plasma/Nezuko/` with two color schemes.
 
-### Phase 3 - KDE Store packaging
-- `.metadata.json` per component (plasma theme, icon theme, look-and-feel).
-- Packaging script producing zip archives with correct structure.
-- Update install.sh to install from archives.
+### Phase 3 - KDE Store packaging (DONE)
+- `pack_kde_store.py` generates `.metadata.json` + `.zip` for all 7 components.
+- `install_from_archives.sh` installs from the archives (user or --system).
+- Plasma 6 desktop themes ship `metadata.json` (+ legacy `metadata.desktop`).
+- Full plan: `PHASE3_KDE_STORE.md`.
+- Output: `pack/` with 7 zips + 7 metadata.json files.
 
 ## Key files / commands
 

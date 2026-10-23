@@ -1,113 +1,73 @@
-# 🌸 Nezuko Plasma Theme
+# Nezuko Plasma Theme
 
-A custom **KDE Plasma theme** inspired by Nezuko 🌸  
+A custom KDE Plasma theme pack inspired by Nezuko Kamado — pink kimono,
+dark haori, and bamboo-green accents.
+
 Includes:
-- Global theme
-- Plasma style
-- Cursors
-- Icons
-- Color scheme
+- Global look-and-feel theme
+- Plasma desktop themes (dark + light)
+- Nezuko-Icons (MacTahoe-styled, pink, self-contained)
+- Nezuko-Cursors
+- Color schemes (dark + light)
+- Splash screen
 
 ---
 
-## 🖼️ Preview
+## Installation
 
-![Nezuko Plasma Theme Screenshot](https://github.com/user-attachments/assets/1ace2741-fef6-4e38-8359-cf6ce73defe0)
+### From source (local install)
 
-
-![kde-plasma-nezuko-kamado-inspired-pink-theme-full-plasma-v0-c3rhrhxyg4mf1](https://github.com/user-attachments/assets/65b4d4e9-8dca-46e4-b470-a3831ab5ccb3)
-
-
----
-
-## 📦 Installation
-
-**Before you begin:**  
-Make sure you have `inkscape` and `rsvg-convert` installed, as they are required for icon conversion.  
-You also need the Qt development packages for building the standalone animated splash:
-
-- `qt5-qmake` – provides `qmake`  
-- `qtbase5-dev` – core Qt libraries and headers  
-- `qtdeclarative5-dev` – for QML/C++ integration  
-- `qml-module-qtquick2` – basic Qt Quick module  
-- `qml-module-qtquick-controls2` – Qt Quick Controls 2  
-- `qml-module-qtmultimedia` – multimedia support in QML  
-- `qtmultimedia5-dev` – C++ multimedia development files  
-
-Install everything on Debian/Ubuntu with:
-
-```bash
-sudo apt update
-sudo apt install inkscape librsvg2-bin \
-qt5-qmake qtbase5-dev qtdeclarative5-dev \
-qml-module-qtquick2 qml-module-qtquick-controls2 \
-qml-module-qtmultimedia qtmultimedia5-dev build-essential
-
-
-**Clone this repository:**
 ```bash
 git clone https://github.com/peter-njoro/nezuko-plasma.git
 cd nezuko-plasma
-```
-
-1. Make the installer script executable:
-```bash
-chmod +x install.sh
-```
-
-2. Run the provided installer script:
-
-```bash
 ./install.sh
 ```
-## The script will:
-- Copy cursors `→ ~/.local/share/icons/Nezuko-Cursors`
-- Copy icons `→ ~/.local/share/icons/Nezuko-Icons`
-- Copy plasma style `→ ~/.local/share/plasma/desktoptheme/Nezuko`
-- Copy global theme `→ ~/.local/share/plasma/look-and-feel/org.kde.nezuko`
-- Copy color scheme `→ ~/.local/share/color-schemes/Nezuko.colors`
 
-## ✅ Once installed, apply the theme via:
-System Settings → Appearance
+### From KDE Store archives
 
-- Plasma Style: `Nezuko`
+```bash
+python3 pack_kde_store.py --all
+./install_from_archives.sh            # user-local (~/.local)
+./install_from_archives.sh --system   # system-wide (needs sudo)
+```
 
-Global Theme: `Nezuko`
+## Apply the theme
 
-Icons: `Nezuko-Icons`
+System Settings → Colors & Themes
 
-Cursors: `Nezuko-Cursors`
+- Global Theme: `Nezuko`
+- Plasma Style: `Nezuko` (dark) or `Nezuko-Light`
+- Icons: `Nezuko-Icons`
+- Cursors: `Nezuko-Cursors`
+- Color Scheme: `Nezuko Kamado` (dark) or `Nezuko Kamado Light`
 
-Color Scheme: `Nezuko`
+## Regenerating components
 
-##❌ Uninstallation
-Make the unistaller excecutable
+```bash
+# Rebuild the icon pack from Papirus sources
+PAPIRUS_SRC=/path/to/Papirus ./icons/Nezuko-Icons/build_icon_pack.sh
+
+# Rebuild the light plasma style from the dark one
+python3 plasma/Nezuko-Light/dark_to_light.py plasma/Nezuko plasma/Nezuko-Light
+
+# Produce KDE Store archives
+python3 pack_kde_store.py --all
+```
+
+## Uninstallation
+
 ```bash
 chmod +x uninstall.sh
-```
-```bash
 ./uninstall.sh
 ```
-This will delete:
-`~/.local/share/icons/Nezuko-Cursors`
-`~/.local/share/icons/Nezuko-Icons`
-`~/.local/share/plasma/desktoptheme/Nezuko`
-`~/.local/share/plasma/look-and-feel/org.kde.nezuko`
-`~/.local/share/color-schemes/Nezuko.colors`
 
-## ⚠️ Troubleshooting
+## Project phases
 
-- If you see permission denied errors, make sure you cloned/extracted the theme as your user (not root).
-Run:
-```bash
-chown -R $USER:$USER .
-```
-inside the theme folder before reinstalling.
+- Phase 1 — Icons: Papirus-based, pink, self-contained (`PHASE1_ICONS.md`)
+- Phase 2 — Plasma style: dark + light variants (`PHASE2_PLASMA_STYLE.md`)
+- Phase 3 — KDE Store packaging (`PHASE3_KDE_STORE.md`)
+- Project reference: `PROJECT_REFERENCE.md`
 
-- If the theme doesn’t show up in System Settings, try logging out/in or restarting Plasma with:
-```bash
-kquitapp plasmashell && plasmashell &
-```
-## 🪄 Credits
+## Credits
 
-Made with ❤️ for KDE Plasma fans. Inspired by Nezuko Kamado.
+Made for KDE Plasma fans. Inspired by Nezuko Kamado.
